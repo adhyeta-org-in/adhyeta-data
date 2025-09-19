@@ -13,7 +13,7 @@
 (p (" Some one stole my gold,) the Miser says.)
 (p (" Did you ever make any use of it,) the neighbor asks.)
 (p (" No, I would only come here to look at it,) the Miser says.)
-(p (" Then place a rock in the hole and look at it,) the neighbor says. “It does you just as much good.”)
+(p (" Then place a rock in the hole and look at it,) the neighbor says. (" It does you just as much good.))
 (p Moral—Wealth unused might as well not exist.)
 )
 (section @lang "sa"
