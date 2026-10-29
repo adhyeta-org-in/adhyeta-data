@@ -1,0 +1,9 @@
+(document @uuid CC0jfweEMXIGBiMB2VojI
+(meta
+(title लघुकथाः)
+(reviewer Karthik Iyer)
+)
+(matter
+(x-list @path "/sa/k" @depth "1+" @exclude "index.sxml")
+)
+)

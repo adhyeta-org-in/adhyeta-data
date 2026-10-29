@@ -1,0 +1,32 @@
+# Books
+
+- कथाकल्पः [https://books.google.co.in/books?id=Y-hjAAAAMAAJ]
+- कथाशतकम् (वेंकट राम शास्त्री)
+- कथाकल्पद्रुमः (अप्पाशास्त्री राशिवडेकर)
+- शेक्सपियर नाटककथावली (वेंकट रमणाचार्य)
+- कथा-संग्रहः (कोइल तम्बुरान केरलवम)
+- https://samskritabalasahityaparishad.org.in/books.html
+- https://samskritabalasahityaparishad.org.in/biblography.html
+- https://archive.org/details/SxvD_bal-bodhini-vol-3-by-kashi-krishnacharya-telugu-1940-chandrika-mudrakshar-shalayam-madras
+- [Balamodini Children's Stories in Sanskrit (1994 to 1999)](https://archive.org/details/bAlamodinI-01)
+- [Balamodini Children's Stories in Sanskrit (2000 to 2004)](https://archive.org/details/bAlamodinI-02)
+- [Balamodini Children's Stories in Sanskrit (2005 to 2009)](https://archive.org/details/bAlamodinI-03)
+- [Balamodini Children's Stories in Sanskrit (2010 to 2014)](https://archive.org/details/bAlamodinI-04)
+- [Balamodini Children's Stories in Sanskrit (2015 to 2019)](https://archive.org/details/bAlamodinI-05)
+- [A miscellaneous collection of Sanskrit dictionary vocabulary and short stories.](https://archive.org/details/sanskritvocab)
+- [bAla kathA saptatiH](https://archive.org/details/kathaa70): Sanskrit children's story book - By Dr Janardan Hegde, Samskrita Bharati
+- [sAne gurUji mahodayasya madhurAH kathAH](https://archive.org/details/madhurAHKathAH): A collection of inspiring stories by Sane Guruji translated by Dr. Madhavi Joshi, Samskrita Bharati, New Delhi
+- [kathA samAhAraH](https://archive.org/details/samAhAraH): Short sanskrit stories - Translated by Ragi Venkatachari, Samskrita Bharati
+- [bAla kathA sravanti](https://archive.org/details/kathA-sravanti): Sanskrit children's stories - By Dr. Janardan Hegde, Samskrita Bharati
+- [jIvana dRShTiH](https://archive.org/details/jIvana-dRShTiH): Book of short stories in Sanskrit - By. Dr. Janardan Hegde, Samskrita Bharati
+- [sugandhaH](https://archive.org/details/sugandhaH): Simple samskritam stories for beginners
+- [Apascimaha pascime](https://archive.org/details/apascimaha): Travelogue book in Sanskrit by Dr. Vishwas, Published by Samskrita Bharati
+- [jnAna dIptiH](https://archive.org/details/jnaana-deeptihi-0): Original - Ramgopal. Translation - Nagaratna
+- [vadAmi kincit](https://archive.org/details/vadAmikincit): A collection of 32 inspirational stories written (originally in Kannada) by Smt. Sudha Murthy (Infosys Foundation). Translated by various authors. pages 192
+- [kathA laharI](https://archive.org/details/kathA-laharI): Sanskrit book of stories by H.V. Nagaraja Rao, Samskrita Bharati
+- [Sanskrit Audiobook](https://archive.org/details/Sanskrit-Audiobook-Samskrita-Bharati)
+- [Meghadutam by Sri Vempati Kutumba Shastri MahaabhaagaH](https://archive.org/details/meghadUtam-01)
+- [sundarakANDam by Sri Vempati Kutumba Shastri MahaabhaagaH](https://archive.org/details/sundarakANDam-01)
+- [Kumarasambhavam Sarga 05 by Sri Vempati Kutumba Shastri MahaabhaagaH](https://archive.org/details/kumArasambhavam-sarga-05) recorded at Samskrita Bharati's Kaveri Shibiram in 2016.
+- [Anjaneya rAmAyaNam - Sanskrit translation of rAmAyaNam](https://archive.org/details/Anjaneya-rAmAyaNam). Original - Dharmavarapu Seetaaraama Anjaneyulu. Translated by - Kandaala Venkata Rama NarasimhacharyaH
+- [Shikshaka mArgadarShikA](https://archive.org/details/shikShaka-mArgadarShikA) A teacher's manual of "Bhasha Pravesha" Project (First Level)
