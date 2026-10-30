@@ -1,0 +1,467 @@
+#!/usr/bin/env python3
+"""Valmikiramayanam Baroda Critical Edition translator.
+
+Reads the BCE e-text from the srcdir passed as argv[1] (this script's own
+directory: Ram00.txt-Ram07.txt plus the checked-in `ids` uuid list) and
+writes finished adoc documents as .xml files under the staging dir passed
+as argv[2], at the old pipeline's site paths (www/sa/i/<slug>/...).
+
+Faithful port of the old ingest (ramayana_bce.py); boundaries, meta and
+uuid assignment match it exactly:
+- Content comes from every *.txt in srcdir, sorted, minus the first one.
+  That first file is Ram00.txt (header prose plus the John D. Smith
+  credit); the old code dropped it with .tail(), so the credit is unused
+  here exactly as it was there. The `ids` file is never parsed as content
+  (it is not *.txt).
+- Uuids are the non-blank lines of <srcdir>/ids, reversed once, then
+  popped so the first document takes the first ids line. Assignment order
+  is the old one: the kanda list, then per kanda in first-seen order the
+  sarga list followed by its sargas. When ids run out, the fallback is a
+  deterministic uuid5 of the site path; uuids are never random, so output
+  is byte-identical across runs.
+- Meta per document mirrors the old code: copyright "CC0. No rights
+  reserved", source "<work title> Baroda Critical Edition", title per doc
+  kind ("<work> BCE", kanda name, "सर्गः <n>"), reviewer "Karthik Iyer".
+  Sarga documents also carry an explicit @x-slug (the zero-padded sarga
+  number, matching the output file stem) so page URLs stay numeric.
+- Verse groups mirror the old rendering: `;`-split padas lettered from
+  the line's pada slot, single-danda closers except after b/d/f/h padas
+  of long verses, sarga-end and (last sarga only) kanda-end closers.
+- Every sarga carries one `xref @rel="prev"` naming the sarga before it
+  in reading order (kanda ascending, then sarga number), so the whole
+  work is one chain from 1.1 to the last sarga of kanda 7; the first
+  sarga has no prev. `next` is derived at publish by inverting prev,
+  which is why only prev is authored: a link must point at something
+  that already exists.
+- Text is NFD-normalized, like the document parser expects.
+
+Deliberate deviations, forced by the new schema (the translator, never
+the schema, absorbs them):
+- Verse-group @ids mirror the old pipeline (k.s.v, sarga-end, kanda-end);
+  @id values are never slugged, only rendered verbatim.
+- Output is canonical XML written directly (no sxml round trip); the
+  translator must not slug -- page slugs come from titles via make_slug
+  at publish time, so only titles are set here.
+
+Stdlib only. No timestamps, no randomness.
+"""
+
+import os
+import sys
+import unicodedata
+import uuid
+
+SITE_SLUG = "valmikiramayanam-bce"
+SOURCE_SUFFIX = "Baroda Critical Edition"
+COPYRIGHT = "CC0. No rights reserved"
+REVIEWER = "Karthik Iyer"
+UUID_NAMESPACE = uuid.NAMESPACE_URL
+SPLIT_PADA_IDS = ("b", "d", "f", "h")
+
+
+title = "वाल्मीकिरामायणम्"
+
+
+def to_devanagari_no(n: int):
+    nos = ["०", "१", "२", "३", "४", "५", "६", "७", "८", "९"]
+
+    y = ""
+    for x in str(n):
+        y += nos[int(x)]
+    return y
+
+
+def to_ord_sarga(n: int):
+    nos = [
+        "",
+        "प्रथमः",
+        "द्वितीयः",
+        "तृतीयः",
+        "चतुर्थः",
+        "पञ्चमः",
+        "षष्ठः",
+        "सप्तमः",
+        "अष्टमः",
+        "नवमः",
+        "दशमः",
+        "एकादशः",
+        "द्वादशः",
+        "त्रयोदशः",
+        "चतुर्दशः",
+        "पञ्चदशः",
+        "षोडशः",
+        "सप्तदशः",
+        "अष्टादशः",
+        "नवदशः",
+        "विंशतितमः",
+        "एकविंशतितमः",
+        "द्वाविंशतितमः",
+        "त्रयोविंशतितमः",
+        "चतुर्विंशतितमः",
+        "पञ्चविंशतितमः",
+        "षड्विंशतितमः",
+        "सप्तविंशतितमः",
+        "अष्टाविंशतितमः",
+        "एकोनत्रिंशत्तमः",
+        "त्रिंशत्तमः",
+        "एकत्रिंशत्तमः",
+        "द्वात्रिंशत्तमः",
+        "त्रयस्त्रिंशः",
+        "चतुस्त्रिंशः",
+        "पञ्चत्रिंशः",
+        "षट्त्रिंशः",
+        "सप्तत्रिंशः",
+        "अष्टत्रिंशः",
+        "एकोनचत्वारिंशः",
+        "चत्वारिंशः",
+        "एकचत्वारिंशः",
+        "द्विचत्वारिंशः",
+        "त्रिचत्वारिंशः",
+        "चतुश्चत्वारिंशः",
+        "पञ्चचत्वारिंशः",
+        "षट्चत्वारिंशः",
+        "सप्तचत्वारिंशः",
+        "अष्टचत्वारिंशः",
+        "एकोनपञ्चाशः",
+        "पञ्चाशः",
+        "एकपञ्चाशः",
+        "द्विपञ्चाशः",
+        "त्रिपञ्चाशः",
+        "चतुःपञ्चाशः",
+        "पञ्चपञ्चाशः",
+        "षट्पञ्चाशः",
+        "सप्तपञ्चाशः",
+        "अष्टपञ्चाशः",
+        "एकोनषष्टितमः",
+        "षष्टितमः",
+        "एकषष्टितमः",
+        "द्विषष्टितमः",
+        "त्रिषष्टितमः",
+        "चतुष्षष्टितमः",
+        "पञ्चषष्टितमः",
+        "षट्षष्टितमः",
+        "सप्तषष्टितमः",
+        "अष्टषष्टितमः",
+        "एकोनसप्ततितमः",
+        "सप्ततितमः",
+        "एकसप्ततितमः",
+        "द्वासप्ततितमः",
+        "त्रिसप्ततितमः",
+        "चतुस्सप्ततितमः",
+        "पञ्चसप्ततितमः",
+        "षट्सप्ततितमः",
+        "सप्तसप्ततितमः",
+        "अष्टासप्ततितमः",
+        "एकोनाशीतितमः",
+        "अशीतितमः",
+        "एकाशीतितमः",
+        "द्व्यशीतितमः",
+        "त्र्यशीतितमः",
+        "चतुरशीतितमः",
+        "पञ्चाशीतितमः",
+        "षडशीतितमः",
+        "सप्ताशीतितमः",
+        "अष्टाशीतितमः",
+        "एकोननवतितमः",
+        "नवतितमः",
+        "एकनवतितमः",
+        "द्विनवतितमः",
+        "त्रिनवतितमः",
+        "चतुर्नवतितमः",
+        "पञ्चनवतितमः",
+        "षण्णवतितमः",
+        "सप्तनवतितमः",
+        "अष्टानवतितमः",
+        "नवनवतितमः",
+        "शततमः",
+        "एकोत्तरशततमः",
+        "द्व्यधिकशततमः",
+        "त्र्यधिकशततमः",
+        "चतुरधिकशततमः",
+        "पञ्चाधिकशततमः",
+        "षडधिकशततमः",
+        "सप्ताधिकशततमः",
+        "अष्टोत्तरशततमः",
+        "नवोत्तरशततमः",
+        "दशोत्तरशततमः",
+        "एकादशाधिकशततमः",
+        "द्वादशोत्तरशततमः",
+        "त्रयोदशाधिकशततमः",
+        "चतुर्दशाधिकशततमः",
+        "पञ्चदशाधिकशततमः",
+        "षोडशोत्तरशततमः",
+    ]
+    return nos[n]
+
+
+def to_kanda(n: int):
+    kandas = [
+        {"name": "बालकाण्डम्", "in": "बालकाण्डे"},
+        {"name": "अयोध्याकाण्डम्", "in": "अयोध्याकाण्डे"},
+        {"name": "अरण्यकाण्डम्", "in": "अरण्यकाण्डे"},
+        {"name": "किष्किन्धाकाण्डम्", "in": "किष्किन्धाकाण्डे"},
+        {"name": "सुन्दरकाण्डम्", "in": "सुन्दरकाण्डे"},
+        {"name": "युद्धकाण्डम्", "in": "युद्धकाण्डे"},
+        {"name": "उत्तरकाण्डम्", "in": "उत्तरकाण्डे"},
+    ]
+    k = kandas[n - 1]
+    return k["name"], k["in"]
+
+
+def el_escape(x: str) -> str:
+    return x.replace("&", "&amp;").replace("<", "&lt;")
+
+
+def attr_escape(x: str) -> str:
+    return el_escape(x).replace('"', "&quot;")
+
+
+def tx(x: str) -> str:
+    return el_escape(unicodedata.normalize("NFD", x))
+
+
+def get_uuids_for_work(fn: str) -> list:
+    if not os.path.exists(fn):
+        return []
+    with open(fn, "r", encoding="utf-8") as f:
+        uuids = [x for x in f.read().split("\n") if x.strip()]
+    uuids.reverse()
+    return uuids
+
+
+def uuid_for(loc: str, uuids: list) -> str:
+    if uuids:
+        return uuids.pop()
+    return str(uuid.uuid5(UUID_NAMESPACE, loc))
+
+
+def write_text(path: str, data: str) -> None:
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8", newline="\n") as f:
+        f.write(data)
+
+
+def set_data(dx: dict, x: str) -> None:
+    kanda = int(x[0])
+    sarga = int(x[1:4])
+    verse = int(x[5:7])
+    ps = x[9:].split(";")
+    if kanda not in dx:
+        dx[kanda] = {}
+    sx = dx[kanda]
+    if sarga not in sx:
+        sx[sarga] = {}
+    vx = sx[sarga]
+    if verse not in vx:
+        vx[verse] = []
+    ys = vx[verse]
+    for i in range(0, len(ps)):
+        p = chr(i + ord(x[7:8]))
+        ys.append((p, ps[i].lstrip()))
+
+
+def sarga_url(kanda: int, sarga: int) -> str:
+    """Public, extensionless path of one sarga: what an xref @url names."""
+    return "/sa/i/" + SITE_SLUG + "/" + str(kanda) + "/" + str(sarga).zfill(3)
+
+
+def meta_block(title_text: str, prev_url=None) -> str:
+    ys = []
+    ys.append("<meta>")
+    ys.append("<copyright>" + tx(COPYRIGHT) + "</copyright>")
+    ys.append("<source>" + tx(title + " " + SOURCE_SUFFIX) + "</source>")
+    ys.append("<title>" + tx(title_text) + "</title>")
+    ys.append("<reviewer>" + tx(REVIEWER) + "</reviewer>")
+    if prev_url is not None:
+        ys.append(
+            '<xref rel="prev" url="' + attr_escape(prev_url) + '"/>'
+        )
+    ys.append("</meta>")
+    return "\n".join(ys)
+
+
+def kanda_list_doc(u: str) -> str:
+    ys = []
+    ys.append('<document uuid="' + attr_escape(u) + '">')
+    ys.append(meta_block(title + " BCE"))
+    ys.append("<matter>")
+    ys.append("<list>")
+    for k in range(1, 7 + 1):
+        k_name, _k_in = to_kanda(k)
+        ys.append(
+            '<li><ref url="/sa/i/'
+            + SITE_SLUG
+            + "/"
+            + str(k)
+            + '/">'
+            + tx(k_name)
+            + "</ref></li>"
+        )
+    ys.append("</list>")
+    ys.append("</matter>")
+    ys.append("</document>")
+    return "\n".join(ys) + "\n"
+
+
+def sarga_list_doc(u: str, k: int, k_name: str, xs: list) -> str:
+    ys = []
+    ys.append('<document uuid="' + attr_escape(u) + '">')
+    ys.append(meta_block(k_name))
+    ys.append("<matter>")
+    ys.append(
+        '<x-list path="/sa/i/'
+        + SITE_SLUG
+        + "/"
+        + str(k)
+        + '" depth="0" exclude="index.xml"/>'
+    )
+    ys.append("</matter>")
+    ys.append("</document>")
+    return "\n".join(ys) + "\n"
+
+
+def sarga_doc(
+    u: str,
+    slug: str,
+    kanda: int,
+    k_name: str,
+    k_in: str,
+    sarga: int,
+    verses: dict,
+    last: bool,
+    prev_url=None,
+) -> str:
+    ys = []
+    ys.append('<document uuid="' + attr_escape(u) + '" x-slug="' + slug + '">')
+    ys.append(meta_block("सर्गः " + to_devanagari_no(sarga), prev_url))
+    ys.append("<matter>")
+    for verse in verses.keys():
+        xps = verses[verse]
+        is_split = len(xps) > 2 and [x for x in xps if x[0] in SPLIT_PADA_IDS]
+        ys.append('<vg id="' + str(kanda) + "." + str(sarga) + "." + str(verse) + '">')
+        for p, xp in enumerate(xps):
+            pid, ptext = xp
+            if p == len(xps) - 1:
+                suffix = "॥ " + to_devanagari_no(verse)
+            elif is_split:
+                suffix = "।" if pid in SPLIT_PADA_IDS else ""
+            else:
+                suffix = "।"
+            ys.append("<v>" + tx(ptext + suffix) + "</v>")
+        ys.append("</vg>")
+    ys.append('<vg id="sarga-end">')
+    ys.append(
+        "<v>"
+        + tx(
+            "इति श्रीरामायणे "
+            + k_in
+            + " "
+            + to_ord_sarga(sarga)
+            + " सर्गः॥ "
+            + to_devanagari_no(sarga)
+        )
+        + "</v>"
+    )
+    ys.append("</vg>")
+    if last:
+        ys.append('<vg id="kanda-end">')
+        ys.append("<v>" + tx("॥ समाप्तं " + k_name + " ॥") + "</v>")
+        ys.append("</vg>")
+    ys.append("</matter>")
+    ys.append("</document>")
+    return "\n".join(ys) + "\n"
+
+
+def consolidate(sd: str) -> dict:
+    names = sorted(n for n in os.listdir(sd) if n.endswith(".txt"))[1:]
+    xs = []
+    for name in names:
+        fp = os.path.join(sd, name)
+        print(fp)
+        with open(fp, "r", encoding="utf-8") as f:
+            for x in f.read().split("\n"):
+                if not x or x.startswith("%"):
+                    continue
+                if "=" in x:
+                    print("QQQ" + x + "QQQ")
+                xs.append(x)
+    dx: dict = {}
+    for x in xs:
+        if "=" in x:
+            print("~~~" + x + "~~~")
+        set_data(dx, x)
+    return dx
+
+
+def reading_order(dx: dict) -> list:
+    """Every (kanda, sarga) in reading order: kanda ascending, then sarga.
+
+    Kept separate from the dict iteration order below, which must stay as it
+    is: uuids are assigned by call order, so reordering the writes would
+    change every document's uuid.
+    """
+    return [(k, s) for k in sorted(dx.keys()) for s in sorted(dx[k].keys())]
+
+
+def generate(sd: str, dd: str) -> None:
+    dx = consolidate(sd)
+    uuids = get_uuids_for_work(os.path.join(sd, "ids"))
+    order = reading_order(dx)
+    prev_of = {}
+    for i in range(1, len(order)):
+        prev_of[order[i]] = order[i - 1]
+    write_text(
+        os.path.join(dd, "index.xml"),
+        kanda_list_doc(uuid_for("sa/i/" + SITE_SLUG + "/index.xml", uuids)),
+    )
+    for kanda in dx.keys():
+        xss = list(dx[kanda].keys())
+        k_name, k_in = to_kanda(kanda)
+        write_text(
+            os.path.join(dd, str(kanda), "index.xml"),
+            sarga_list_doc(
+                uuid_for("sa/i/" + SITE_SLUG + "/" + str(kanda) + "/index.xml", uuids),
+                kanda,
+                k_name,
+                xss,
+            ),
+        )
+        for s, sarga in enumerate(xss):
+            sarga_label = str(sarga).zfill(3)
+            write_text(
+                os.path.join(dd, str(kanda), sarga_label + ".xml"),
+                sarga_doc(
+                    uuid_for(
+                        "sa/i/"
+                        + SITE_SLUG
+                        + "/"
+                        + str(kanda)
+                        + "/"
+                        + sarga_label
+                        + ".xml",
+                        uuids,
+                    ),
+                    sarga_label,
+                    kanda,
+                    k_name,
+                    k_in,
+                    sarga,
+                    dx[kanda][sarga],
+                    s == len(xss) - 1,
+                    None
+                    if (kanda, sarga) not in prev_of
+                    else sarga_url(*prev_of[(kanda, sarga)]),
+                ),
+            )
+
+
+def main(argv: list) -> None:
+    srcdir = argv[1]
+    destdir = argv[2]
+    print(srcdir)
+    print(destdir)
+    generate(srcdir, os.path.join(destdir, "www", "sa", "i", SITE_SLUG))
+
+
+if __name__ == "__main__":
+    main(sys.argv)

@@ -1,0 +1,178 @@
+% Ramayana: General information
+% Last updated: Fri Sep 25 2020
+% Encoding: Unicode Devanagari
+%
+
+==================================
+Electronic text of the Ramayana
+==================================
+
+This file contains information about the electronic text of the
+Ramayana. Anyone who intends to make use of the text is asked to
+read it carefully. It is divided into three sections:
+
+  * The status of the electronic text
+  * The format of the electronic text
+  * Notes on the electronic text
+
+                                                          John D. Smith
+                                                University of Cambridge
+
+------------------------------------------------------------------------
+
+The status of the electronic text
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This text has its origins in the work of Prof. Muneo Tokunaga of the
+University of Kyoto. During the late 1980s and early 1990s, Prof. Tokunaga
+typed the entire text of the Critical Edition of the Ramayana (Baroda,
+1960-75) into a computer; he then placed the electronic text he had thus
+created on the Internet. The enormity of the labour involved in the creation
+of the text is matched only by Prof. Tokunaga's generosity in making it so
+freely available to the scholarly world. This version of the text derives
+ultimately from that first version, and I am deeply grateful to Prof. Tokunaga
+for permitting this use of the products of his labour.
+
+Unlike the electronic Mahabharata, this text of the Ramayana has not benefited
+from the attention of a dedicated team working for several years to free it
+from errors. After converting Prof. Tokunaga's ASCII-based version to Unicode,
+and regularising the format to correspond to that of the Mahabharata, I have
+merely corrected errors as they came to my attention. In doing so I have
+received the kind assistance of a number of people who reported to me errors
+they had found. They include: Robert Chen, Yves Codet, Phillip Ernest, James
+L. Fitzgerald, Giulio Geymonat, Arlo Griffiths, Krešimir Krnic, Kirti
+Kulkarni, Christopher Minkowski, Sven Sellmer and Michael Slouber. (Please
+inform me of anyone I have accidentally omitted.)
+
+However, the text is still neither as accurate nor as consistent as I would
+like, so it should be used with caution. If you believe you have found an
+error, please report it by email to Suvarna Deshpande (suvarnad09 [at]
+gmail.com) or Pranav Gokhale (pranavpg88 [at] gmail.com). Before reporting any
+error, please read the rest of this document!
+
+Corrections will be made to errors remaining in the text as they come to
+light. Check the “Last updated” date at the head of each kāṇḍa against the
+current dates listed on the distribution website (URL
+https://bombay.indology.info/ramayana/welcome.html) to see whether you need to
+download newer versions.
+
+------------------------------------------------------------------------
+
+The format of the electronic text
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Line-numbers
+---------------
+
+The text is divided into seven files, one per main book (काण्ड) of the
+Ramayana. However, the format of each line is such as to identify it uniquely,
+whichever file it happens to come from. At the start of every line appears an
+eight-character line-number specifying the book or काण्ड (one digit), the
+chapter or सर्ग (three digits), the verse or श्लोक (three digits), and
+the quarter-verse or पाद (one letter, specifying the first of the two
+पादs that form each line). Thus the last verse of the entire Ramayana
+appears as:
+
+7100026a एतावदेव आख्यानं सोत्तरं ब्रह्मपूजितम्
+7100026c रामायणमिति ख्यातं मुख्यं वाल्मीकिना कृतम्
+
+indicating that it represents पादs a to d of the 26th verse of book 7,
+chapter 100.
+
+If the line is part of a verse in त्रिष्टुभ् or other longer metre, the
+division between the पादs is marked with a semicolon:
+
+1001079a पठन्द्विजो वागृषभत्वमीया;त्स्यात्क्षत्रियो भूमिपतित्वमीयात्
+
+2. Encodings
+------------
+
+The text is available in three encodings (character sets) commonly used for
+Sanskrit and other Indian languages: Unicode Devanagari, Unicode Roman (using
+the conventions defined in ISO 15919), and ASCII (using the Harvard/Kyoto
+conventions).
+
+3. Spelling conventions
+-----------------------
+
+Forms such as किं चित् (/चन/अपि) are everywhere spelt as two words in
+Roman representations of the electronic text (assuming that sandhi does not
+prevent this, as in कापि), whatever the usage in the printed text. The word
+कच्चित् of course is unchanged, as are compounded forms such as
+यत्किंचित्कारिन् “acting wilfully”.
+
+In the Devanagari versions of the text, forms such as किंचित् are spelt as
+single words to respect normal usage in Indian scripts.
+
+The phrase अथ वा is always written as two words. The same applies to
+periphrastic perfects: कथयां बभूव, etc.
+
+------------------------------------------------------------------------
+
+Notes on the electronic text
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Occasionally the electronic text differs from the text as given in the printed
+edition. The following is a complete list of such differences: each line or
+stanza is quoted as it is actually printed, followed by a comment explaining
+the apparent discrepancy. Note that changes made purely to adhere to the
+spelling conventions listed above are not included. Note also that all
+corrections included in the printed edition's various lists of errata, etc.,
+have been applied to the electronic text: they too are not referred to here.
+(Among the corrections to Book 1, The Bālakāṇḍa, are changes to the line
+numbering affecting passages 1.9.7–8, 1.13.22–4, 1.15.25–7 and 1.26.16–19: the
+numbering in the electronic text implements these corrections.)
+
+1001025a पौरैरनुगतो दूरं पित्रा दशरथेन च
+1001025c शृङ्गवेरपुरे सूतं गङ्गाकूले व्यसर्जयत्
+  In the Critical Notes, the editor remarks, “Read 59* in the text after 25.”
+  This and similar insertions have not been made here as they would scramble
+  the line numbering. Star passage 59* reads:
+  गुहमासाद्य धर्मात्मा निषादधिपतिं प्रियम्
+  गुहेन सहितो रामो लक्ष्मणेन च सीतया
+
+1001029a मृते तु तस्मिन्भरतो वसिष्ठप्रमुखैर्द्विजैः
+1001029c नियुज्यमानो राज्याय नैच्छद्राज्यं महाबलः
+  In the Critical Notes, the editor remarks, “After 29, 70*, 71* and 73*
+  should be read in the text.” Star passage 70* reads:
+  अयाचद्भ्रातरं राममार्यभावपुरस्कृतः
+  Star passage 71* reads:
+  त्वमेव राजा धर्मज्ञ इति रामं वचोऽब्रवीत्
+  Star passage 73* reads:
+  न चैच्छत्पितुरादेशाद्राज्यं रामो महाबलः
+
+1001048a हनुमद्वचनाच्चैव सुग्रीवेण समागतः
+1001048c सुग्रीवाय च तत्सर्वं शंसद्रामो महाबलः
+  In the Critical Notes, the editor remarks, “Read 96* and 97* after St. 48 in
+  the text.” Star passage 96* reads:
+  सुग्रीवश्चापि तत्सर्वं श्रुत्वा रामस्य वानरः
+  Star passage 97* reads:
+  चकार सख्यं रामेण प्रीतश्चैवाग्निसाक्षिकम्
+
+1006022a अञ्जनादपि निष्क्रान्तैर्वामनादपि च द्विपैः
+1006022c भद्रमन्द्रैर्भद्रमृगैर्मृगमन्द्रैश्च सा पुरी
+  In the Critical Notes, the editor remarks, “Put the star passage 243* in the
+  text after 22ab” — i.e., between the two existing lines of this श्लोक.
+  Star passage 243* reads:
+  भद्रैर्मन्द्रैर्मृगैश्चैव भद्रमन्द्रमृगैस्तथा
+
+1073016a तस्मिंस्तमसि घोरे तु भस्मच्छन्नेव सा चमूः
+1073016c ददर्श भीमसंकाशं जटामण्डलधारिणम्
+  In the Critical Notes, the editor remarks, “Read 1348* in the text as 16ef”
+  — i.e., as a third line of this श्लोक.” Star passage 1348* reads:
+  भार्गवं जामदग्न्येयं राजराजविमर्दनम्
+
+2095019a सीते मृतस्ते श्वशुरः पित्रा हीनोऽसि लक्ष्मण
+2095019c भरतो दुःखमाचष्टे स्वर्गतं पृथिवीपतिम्
+  In the Corrigenda, the editor remarks, “After 2.95.19, 2179* and 2178* are
+  to be read above in the Crit. Text as 2.95.20 and 21 and 22 respy., with the
+  changes सा सीता (for जानकी) and स्वर्गलोकगतं नृपम् for b in st.
+  20.” Star passage 2179* reads:
+  जानकी श्वशुरं श्रुत्वा सर्वलोकगुरुं मृतम्
+  नेत्राभ्यामश्रुपूर्णाभ्यां न शशाकेक्षितुं पतिम्
+  Star passage 2178* reads:
+  ततो बहुगुणं तेषां बाष्पं नेत्रेष्वजायत
+  तथा ब्रुवति काकुत्स्थे कुमाराणां यशस्विनाम्
+  ततस्ते भ्रातरः सर्वे भृशमाश्वास्य भार्गवम्
+  अब्रुवञ्जगतीभर्तुः क्रियतामुदकं पितुः
+
