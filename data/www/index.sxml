@@ -5,12 +5,12 @@
 )
 (matter
 (p Welcome to अध्येता, a Sanskrit reader. This website is divided into three main sections.)
-(p (i Stories and poems.) To help you learn the language at your own pace by reading:)
+(p (i Reader.) To help you learn the language at your own pace by reading:)
 (list
 (li (ref @url "/sa/k/" कथाः))
 (li (ref @url "/sa/i/valmikiramayanam-bce/" the वाल्मीकिरामायणम् (` Baroda Critical Edition)))
 )
-(p (i Grammar.) For those interested in the mechanics of the language.)
-(p (i Reader.) The reader app gamifies your Sanskrit journey by providing stats on your vocabulary acquisition progress. It lets you mark the words you know and add notes/meaning to words you don't.)
+(p (i Grammar.) For those interested in the mechanics of the language. (i This is a work-in-progress.))
+(p (i Study.) The (ref @url "https://app.adhyeta.org.in/x/" study mode) gamifies your Sanskrit journey by providing stats on your vocabulary acquisition progress. It lets you mark the words you know and add notes/meaning to words you don't.)
 )
 )
