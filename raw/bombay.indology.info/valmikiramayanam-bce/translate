@@ -33,7 +33,7 @@ uuid assignment match it exactly:
   sarga has no prev. `next` is derived at publish by inverting prev,
   which is why only prev is authored: a link must point at something
   that already exists.
-- Text is NFD-normalized, like the document parser expects.
+- Text is NFC-normalized (SSG requires NFC sources).
 
 Deliberate deviations, forced by the new schema (the translator, never
 the schema, absorbs them):
@@ -50,6 +50,23 @@ import os
 import sys
 import unicodedata
 import uuid
+
+# Unified pipeline: shared fragment/uuid store lives in tools/ (see
+# tools/fragments.py, works/ramayana_bce.py). This translator keeps all
+# Ramayana rendering, but loads fragments/uuids through tools so the
+# next epic (Mahabharata, Puranas, Kalidasa) reuses the same store.
+_HERE = os.path.abspath(__file__)
+_REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(_HERE))))
+if _REPO not in sys.path:
+    sys.path.insert(0, _REPO)
+try:
+    from tools.fragments import load_text_map, load_uuid_map
+    from works.ramayana_bce import SITE_SLUG as _WORK_SLUG
+
+    assert _WORK_SLUG == "valmikiramayanam-bce"
+except Exception:
+    load_text_map = None  # type: ignore
+    load_uuid_map = None  # type: ignore
 
 SITE_SLUG = "valmikiramayanam-bce"
 SOURCE_SUFFIX = "Baroda Critical Edition"
@@ -217,7 +234,7 @@ def attr_escape(x: str) -> str:
 
 
 def tx(x: str) -> str:
-    return el_escape(unicodedata.normalize("NFD", x))
+    return el_escape(unicodedata.normalize("NFC", x))
 
 
 def get_uuids_for_work(fn: str) -> list:
@@ -265,17 +282,17 @@ def sarga_url(kanda: int, sarga: int) -> str:
     return "/sa/i/" + SITE_SLUG + "/" + str(kanda) + "/" + str(sarga).zfill(3)
 
 
-def meta_block(title_text: str, prev_url=None) -> str:
+def meta_block(title_text: str, prev_url=None, summary: str = "") -> str:
     ys = []
     ys.append("<meta>")
     ys.append("<copyright>" + tx(COPYRIGHT) + "</copyright>")
     ys.append("<source>" + tx(title + " " + SOURCE_SUFFIX) + "</source>")
     ys.append("<title>" + tx(title_text) + "</title>")
+    if summary:
+        ys.append("<summary>" + tx(summary) + "</summary>")
     ys.append("<reviewer>" + tx(REVIEWER) + "</reviewer>")
     if prev_url is not None:
-        ys.append(
-            '<xref rel="prev" url="' + attr_escape(prev_url) + '"/>'
-        )
+        ys.append('<xref rel="prev" url="' + attr_escape(prev_url) + '"/>')
     ys.append("</meta>")
     return "\n".join(ys)
 
@@ -330,11 +347,18 @@ def sarga_doc(
     verses: dict,
     last: bool,
     prev_url=None,
+    summary: str = "",
+    hook: str = "",
+    beats: str = "",
 ) -> str:
     ys = []
     ys.append('<document uuid="' + attr_escape(u) + '" x-slug="' + slug + '">')
-    ys.append(meta_block("सर्गः " + to_devanagari_no(sarga), prev_url))
+    ys.append(meta_block("सर्गः " + to_devanagari_no(sarga), prev_url, summary))
     ys.append("<matter>")
+    if hook:
+        ys.append('<p type="hook">' + tx(hook) + "</p>")
+    if beats:
+        ys.append('<p type="beats">' + tx(beats) + "</p>")
     for verse in verses.keys():
         xps = verses[verse]
         is_split = len(xps) > 2 and [x for x in xps if x[0] in SPLIT_PADA_IDS]
@@ -406,13 +430,21 @@ def reading_order(dx: dict) -> list:
 def generate(sd: str, dd: str) -> None:
     dx = consolidate(sd)
     uuids = get_uuids_for_work(os.path.join(sd, "ids"))
+    uuid_map = load_uuid_map(sd)
+    text_map = load_text_map(sd, ("summaries", "hooks", "beats"))
+
+    def resolve_uuid(key: str, loc: str) -> str:
+        if key in uuid_map:
+            return uuid_map[key]
+        return uuid_for(loc, uuids)
+
     order = reading_order(dx)
     prev_of = {}
     for i in range(1, len(order)):
         prev_of[order[i]] = order[i - 1]
     write_text(
         os.path.join(dd, "index.xml"),
-        kanda_list_doc(uuid_for("sa/i/" + SITE_SLUG + "/index.xml", uuids)),
+        kanda_list_doc(resolve_uuid("index", "sa/i/" + SITE_SLUG + "/index.xml")),
     )
     for kanda in dx.keys():
         xss = list(dx[kanda].keys())
@@ -420,7 +452,9 @@ def generate(sd: str, dd: str) -> None:
         write_text(
             os.path.join(dd, str(kanda), "index.xml"),
             sarga_list_doc(
-                uuid_for("sa/i/" + SITE_SLUG + "/" + str(kanda) + "/index.xml", uuids),
+                resolve_uuid(
+                    str(kanda), "sa/i/" + SITE_SLUG + "/" + str(kanda) + "/index.xml"
+                ),
                 kanda,
                 k_name,
                 xss,
@@ -428,10 +462,12 @@ def generate(sd: str, dd: str) -> None:
         )
         for s, sarga in enumerate(xss):
             sarga_label = str(sarga).zfill(3)
+            skey = f"{kanda}.{sarga_label}"
             write_text(
                 os.path.join(dd, str(kanda), sarga_label + ".xml"),
                 sarga_doc(
-                    uuid_for(
+                    resolve_uuid(
+                        skey,
                         "sa/i/"
                         + SITE_SLUG
                         + "/"
@@ -439,7 +475,6 @@ def generate(sd: str, dd: str) -> None:
                         + "/"
                         + sarga_label
                         + ".xml",
-                        uuids,
                     ),
                     sarga_label,
                     kanda,
@@ -451,6 +486,9 @@ def generate(sd: str, dd: str) -> None:
                     None
                     if (kanda, sarga) not in prev_of
                     else sarga_url(*prev_of[(kanda, sarga)]),
+                    text_map.get(("summaries", skey), ""),
+                    text_map.get(("hooks", skey), ""),
+                    text_map.get(("beats", skey), ""),
                 ),
             )
 
