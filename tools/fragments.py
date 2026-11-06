@@ -11,6 +11,11 @@ Combined files (checked in next to fragments):
   uuids.tsv                               lines: <KEY><TAB><uuid>
   (KEY = index | K | K.SSS for Ramayana; work adapters define their own.)
 
+NOTE: the SSG-run translator (raw/.../translate) intentionally vendors
+minimal copies of these readers instead of importing this module, so it
+stays runnable standalone from its own srcdir. Keep the two in sync;
+this module remains the canonical dev-side implementation.
+
 Stdlib only.
 """
 

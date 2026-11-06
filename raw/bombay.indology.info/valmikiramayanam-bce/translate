@@ -51,22 +51,40 @@ import sys
 import unicodedata
 import uuid
 
-# Unified pipeline: shared fragment/uuid store lives in tools/ (see
-# tools/fragments.py, works/ramayana_bce.py). This translator keeps all
-# Ramayana rendering, but loads fragments/uuids through tools so the
-# next epic (Mahabharata, Puranas, Kalidasa) reuses the same store.
-_HERE = os.path.abspath(__file__)
-_REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(_HERE))))
-if _REPO not in sys.path:
-    sys.path.insert(0, _REPO)
-try:
-    from tools.fragments import load_text_map, load_uuid_map
-    from works.ramayana_bce import SITE_SLUG as _WORK_SLUG
+# English telling lives beside the e-text as plain TSVs: hooks.tsv,
+# beats.tsv and summaries.tsv hold one "<kanda>.<sarga> TAB text" line
+# per sarga, and uuids.tsv holds one "<key> TAB <uuid>" line per
+# document (index, each kanda, each sarga). All four are read directly
+# from this translator's own srcdir; no shared tools/ store is needed.
+def load_text_map(sd: str, kinds) -> dict:
+    out: dict = {}
+    for kind in kinds:
+        fp = os.path.join(sd, kind + ".tsv")
+        if not os.path.exists(fp):
+            continue
+        with open(fp, "r", encoding="utf-8") as f:
+            for line in f.read().split("\n"):
+                if not line.strip():
+                    continue
+                key, _, text = line.partition("\t")
+                if key and text:
+                    out[(kind, key.strip())] = text.strip()
+    return out
 
-    assert _WORK_SLUG == "valmikiramayanam-bce"
-except Exception:
-    load_text_map = None  # type: ignore
-    load_uuid_map = None  # type: ignore
+
+def load_uuid_map(sd: str) -> dict:
+    fp = os.path.join(sd, "uuids.tsv")
+    out: dict = {}
+    if not os.path.exists(fp):
+        return out
+    with open(fp, "r", encoding="utf-8") as f:
+        for line in f.read().split("\n"):
+            if not line.strip():
+                continue
+            key, _, val = line.partition("\t")
+            if key and val:
+                out[key.strip()] = val.strip()
+    return out
 
 SITE_SLUG = "valmikiramayanam-bce"
 SOURCE_SUFFIX = "Baroda Critical Edition"
@@ -355,10 +373,13 @@ def sarga_doc(
     ys.append('<document uuid="' + attr_escape(u) + '" x-slug="' + slug + '">')
     ys.append(meta_block("सर्गः " + to_devanagari_no(sarga), prev_url, summary))
     ys.append("<matter>")
-    if hook:
-        ys.append('<p type="hook">' + tx(hook) + "</p>")
-    if beats:
-        ys.append('<p type="beats">' + tx(beats) + "</p>")
+    if hook or beats:
+        ys.append('<section lang="en">')
+        if hook:
+            ys.append('<p type="hook">' + tx(hook) + "</p>")
+        if beats:
+            ys.append('<p type="beats">' + tx(beats) + "</p>")
+        ys.append("</section>")
     for verse in verses.keys():
         xps = verses[verse]
         is_split = len(xps) > 2 and [x for x in xps if x[0] in SPLIT_PADA_IDS]
