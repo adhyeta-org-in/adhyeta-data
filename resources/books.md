@@ -30,3 +30,8 @@
 - [Kumarasambhavam Sarga 05 by Sri Vempati Kutumba Shastri MahaabhaagaH](https://archive.org/details/kumArasambhavam-sarga-05) recorded at Samskrita Bharati's Kaveri Shibiram in 2016.
 - [Anjaneya rAmAyaNam - Sanskrit translation of rAmAyaNam](https://archive.org/details/Anjaneya-rAmAyaNam). Original - Dharmavarapu Seetaaraama Anjaneyulu. Translated by - Kandaala Venkata Rama NarasimhacharyaH
 - [Shikshaka mArgadarShikA](https://archive.org/details/shikShaka-mArgadarShikA) A teacher's manual of "Bhasha Pravesha" Project (First Level)
+- [Mahabharata Complete Recitation using Vāgdhenu](https://archive.org/download/mahabharata-critical-edition)
+- [Mahabharata Complete Recitation #2 using Vāgdhenu](https://archive.org/details/mahabharata-complete-recitation)
+- [Kathasaritsagara Complete Recitation (Somadeva)](https://archive.org/details/kathasaritsagara-complete-recitation)
+- [Brhatkathaslokasamgraha (Budhasvamin) — Complete Sanskrit Recitation](https://archive.org/details/brhatkathaslokasamgraha-complete-recitation)
+- [Panchatantra of Vishnusharman — Complete Sanskrit Recitation](https://archive.org/details/panchatantra-complete-recitation)
