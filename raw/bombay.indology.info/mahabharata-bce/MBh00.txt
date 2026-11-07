@@ -1,0 +1,485 @@
+% Mahabharata: General information
+% Last updated: Thu Nov 05 2026
+% Encoding: Unicode Devanagari
+% Electronic text (C) Bhandarkar Oriental Research Institute,
+% Pune, India, 1999
+%
+
+==================================
+Electronic text of the Mahabharata
+==================================
+
+This file contains information about the electronic text of the
+Mahabharata. Anyone who intends to make use of the text is asked to
+read it carefully. It is divided into four sections:
+
+  * The status of the electronic text
+  * The history of the electronic text
+  * The format of the electronic text
+  * Notes on the electronic text
+
+                                                          John D. Smith
+                                                University of Cambridge
+------------------------------------------------------------------------
+
+The status of the electronic text
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The electronic text of the Mahabharata is Copyright (C) The Bhandarkar
+Oriental Research Institute (BORI), Pune. This authorised and regularly
+updated text is available only via the web page
+https://indology.info/bombay/mahabharata/statement.html.
+
+The text is as accurate as possible, but errors may well still appear. If you
+believe you have found an error, please report it by email to jds10 (at) cam.ac.uk.
+Before reporting any error, please read the rest of this document!
+
+Corrections will be made to errors remaining in the text as they come to
+light. Check the “Last updated” date at the head of each parvan against the
+current dates listed on the distribution website (URL
+https://indology.info/bombay/mahabharata/welcome.html) to see whether
+you need to download newer versions.
+
+------------------------------------------------------------------------
+
+The history of the electronic text
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This text has its origins in the work of Prof. Muneo Tokunaga of the
+University of Kyoto. During the late 1980s and early 1990s, Prof. Tokunaga
+typed the entire text of the Critical Edition of the Mahabharata (BORI,
+1933-66) into a computer, and in 1994 he placed the electronic text he had
+thus created on the Internet. The enormity of the labour involved in the
+creation of the text is matched only by Prof. Tokunaga's generosity in making
+it so freely available to the scholarly world. This version of the text
+derives ultimately from that first version, and I am deeply grateful to Prof.
+Tokunaga for permitting this use of the products of his labour.
+
+In transcribing the Mahabharata, Prof. Tokunaga took a number of policy
+decisions which can cause difficulties for would-be users whose requirements
+differ from his. Most of these -- for example, his use of “m” for both m and
+anusvara, and “n” for the dental, palatal and velar nasals -- can be overcome
+with a little effort. Much the most serious problem is caused by his use of a
+single separator to divide word from word and compound-member from
+compound-member (something he did not do in his transcription of the
+Ramayana). The result is that, for example, the Gita begins
+धर्म क्षेत्रे कुरु क्षेत्रे, not धर्मक्षेत्रे कुरुक्षेत्रे.
+
+In 1995 I devised a method which I believed would allow me to rejoin a
+significant percentage of these “split” compounds. It involved using a
+computer to analyse differences between substantial passages of
+Mahabharata text before and after full “correction” by hand. In this
+way the computer could learn to recognise large numbers of typical
+split compounds, and could therefore be used to correct them wherever
+they occurred in the text as a whole.
+
+Applying this method over a period of months led to the elimination of perhaps
+75% of the split compounds occurring in the electronic text; I also made large
+numbers of corrections of other kinds. Then, like Prof. Tokunaga before me, I
+made the resulting text available via the Internet; I also began to make use
+of it in my own scholarly work. However, this kept its remaining deficiencies
+all too permanently before my eyes, and I determined to find a way of bringing
+the text to (notional) perfection.
+
+With the aid of generous funding from the Humanities Research Board of the
+British Academy, the Society for South Asian Studies and the Smuts Memorial
+Fund (University of Cambridge), I was able to set up a project at BORI to
+achieve this goal. A team of five assistants -- Indu Deshpande, Kirti Sharad
+Thakar, Pradnya Anant Rayrikar, Samita Vasant Shinde and Shilpa Mulay -- were
+employed to work through the entire text correcting any split compounds or
+other errors they encountered. The task was done throughout in duplicate, so
+that slips made by one assistant would show up through comparison with the
+work of another. I was responsible for collating the results, which form the
+basis of this electronic text.
+
+For their dedicated work, and the levels of accuracy that they have brought to
+a long and demanding task, the members of the team, like Prof. Tokunaga
+himself, have earned the gratitude of all those who make use of the electronic
+Mahabharata. My own gratitude goes in addition to Prof. Saroja Bhate, without
+whose help the project would never have reached such successful results.
+
+------------------------------------------------------------------------
+
+The format of the electronic text
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Line-numbers
+---------------
+
+The text is divided into eighteen files, one per main book (पर्वन्) of the
+Mahabharata. However, the format of each line is such as to identify it
+uniquely, whichever file it happens to come from. At the start of every line
+appears a nine-character line-number specifying the book or पर्वन् (two
+digits), the chapter or अध्याय (three digits), the verse or श्लोक (three
+digits), and the quarter-verse or पाद (one letter, specifying the first of
+the two पादs that form each line). Thus the first line of the Gita appears
+as:
+
+06023001a धर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः
+
+indicating that it represents पादs a and b of the first verse of book 6,
+chapter 23.
+
+If the line is part of a verse in त्रिष्टुभ् or other longer metre, the
+division between the पादs is marked with a semicolon:
+
+01001065a दुर्योधनो मन्युमयो महाद्रुमः; स्कन्धः कर्णः शकुनिस्तस्य शाखाः
+
+If the line is part of a passage in prose, the final letter of the line-number
+(which normally indicates the पाद) is capitalised:
+
+01003001A जनमेजयः पारिक्षितः सह भ्रातृभिः कुरुक्षेत्रे दीर्घसत्रमुपास्ते
+
+If the line is a header such as जनमेजय उवाच, the final letter of the
+line-number is replaced by a space:
+
+01045003  जनमेजय उवाच
+
+2. Encodings
+------------
+
+The text is available in three encodings (character sets) commonly used for
+Sanskrit and other Indian languages: Unicode Devanagari, Unicode Roman (using
+the conventions defined in ISO 15919), and ASCII (using the Harvard/Kyoto
+conventions).
+
+3. Spelling conventions
+-----------------------
+
+It is impossible to achieve complete consistency in a text as large and
+diverse as the Mahabharata, especially when it was edited over 33 years by
+several different scholars from a vast range of manuscript sources. So, for
+example, the spellings द्वंद्व and द्वन्द्व both appear in several books.
+No serious attempt at normalisation of spelling has been made in the
+electronic text, but some consistency in purely editorial matters is clearly
+desirable, especially given that people will wish to search the entire text
+for words and phrases. The following rules have been applied, which may
+introduce minor changes from the text as printed; the words छत्र etc.
+raise a particular problem which is addressed in some detail below.
+
+  General rules
+  +++++++++++++
+
+  Forms such as किं चित् (/चन/अपि) are everywhere spelt as two words in
+  Roman representations of the electronic text (assuming that sandhi does not
+  prevent this, as in कापि), whatever the usage in the printed text;
+  similarly किं स्वित्, etc. The word कच्चित् of course is unchanged, as are
+  compounded forms such as किंचिच्छेष “having little left remaining”.
+
+  In the Devanagari versions of the text, forms such as किंचित् are spelt as
+  single words to respect normal usage in Indian scripts.
+
+  The phrase अथ वा is always written as two words. The same applies to
+  periphrastic perfects: कथयां बभूव, etc.
+
+  Use of the word-internal अवग्रह in forms such as यशोऽर्थ is not
+  entirely consistent in the printed text (e.g. यशोऽर्थं 7.86.20c but
+  यशोर्थम् 8.29.25b). The Errata to Book 1 contain five such cases, in all
+  of which Sukthankar requests the deletion of the अवग्रह (he missed a
+  single further case at 1.115.11d). Arguments could be mounted against this
+  practice, but the editorial intention is very clear, and the internal
+  अवग्रह has been removed in the few cases where it does appear.
+
+  An effort has been made to standardise the use of double अवग्रह in cases
+  where the elided vowel is not अ but आ. This is the normal usage in the
+  printed text, but there are a few cases where single अवग्रह appears
+  instead; the electronic text corrects these.
+
+  The words कार्त्तिक, कार्त्तिकेय, etc., are for the most part spelt with
+  double “t” in the Critical Edition, but there are some occurrences of
+  “कार्तिक” and “कार्तिकेय”. These have been silently normalised in the
+  electronic text. Similarly, the absolutive छित्त्वा is occasionally spelt
+  with a single “t”: such occurrences have been normalised to the correct
+  form.
+
+
+  The words छत्र, सत्र and पत्र
+  +++++++++++++++++++++++++++++++++
+
+  The words छत्र, सत्र and पत्र are spelt inconsistently in the
+  Critical Edition: some editors favoured the spelling with single “t”, others
+  that with double “tt”. It appeared undesirable to leave such inconsistency
+  in place, and all three words are uniformly spelt with single “t” in the
+  electronic text. This applies also to derivative forms in -in, etc. The
+  choice of single over double “t” reflects the overall weight of opinion
+  amongst the editors: this appeared a more important criterion than any
+  questions of etymological “correctness”.
+
+  Note, however, that the word तोत्त्र is spelt with double “t”, since the
+  Critical Edition is entirely consistent in spelling it thus at every
+  occurrence.
+
+------------------------------------------------------------------------
+
+Notes on the electronic text
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Occasionally the electronic text corrects an error in the printed edition. The
+following is a complete list of such corrections: each line is quoted as it is
+actually printed, followed by a comment explaining the correction. (In a few
+cases a possible correction is noted that has not in fact been implemented.)
+Note that changes made purely to adhere to the spelling conventions listed
+above are not included. Note also that all corrections included in the printed
+edition's various lists of errata, etc., have been applied to the electronic
+text: they too are not referred to here.
+
+In these notes, “PAE” refers to Phillip Ernest, who has spent many hours
+checking problematical readings in manuscripts used in the preparation of the
+Critical Edition and still available for consultation at BORI. Thanks to his
+efforts it has been possible to establish beyond doubt that certain puzzling
+readings found in the printed edition are simple typographic errors.
+
+01001046a भूतस्थानानि सर्वाणि रहस्यं विविधं च यत्
+  The first printing of Book 1 (in separate fascicules) has त्रिविधं here,
+  but in the second printing (in bound form) this has been replaced by
+  विविधं. Since विविधं is also quoted as a variant reading, it is
+  clear that it is the latter form which is a typographic error. I am grateful
+  to James L. Fitzgerald for drawing my attention to this problem.
+
+01001174c अजेयः परशुः पुण्ड्रः शम्भुर्देवावृधोऽनघः
+  This is the only occurrence of the word शम्भु- spelt with nasal
+  “m” rather than अनुस्वार. The spelling with अनुस्वार occurs
+  seventeen times, including an occurrence later in Book 1 (01058043c).
+  It is clear that this was the spelling preferred by Sukthankar and the
+  other editors, and I have restored it in this one discrepant instance.
+  I am grateful to James L. Fitzgerald for drawing my attention to this
+  problem.
+  
+01058043a तमुवाच महाराज भूमिं भूमिपतिर्विभुः
+  It is certain that तम् is a typographic error for ताम्. The editor
+  records no variant readings for the word, and yet the Bombay Edition and
+  manuscripts K0, Da1 and D1 all have ताम् (PAE).
+
+01179009a केजिदाहुर्युवा श्रीमान्नागराजकरोपमः
+
+02024018c उरगावासिनं चैव रोचमानं रणेऽजयत्
+  See the Supplementary Addenda, p. 515.
+
+05032014c विरोचतेऽहार्यवृत्तेन वीरो; युधिष्ठिरस्त्वयि पापं विसृज्य
+  See the note on p. 726 of the edition.
+
+05070042c प्रशान्ताः समभूताश्च श्रियं तानश्नुवीमहि
+  It is certain that तान् is a typographic error for ताम्. The editor
+  records no variant readings for the word, and yet the Bombay Edition and
+  manuscripts K1, Ds1 and D5 all have ताम् (PAE).
+
+07005034c त्रैय्यम्बकमथेष्वस्त्रमस्त्राणि विविधानि च
+  त्रैय्यंबकम् is also quoted as a variant reading.
+
+07035011a तमुदीक्ष्य तथा यान्तं सर्वे द्रोणपुरोगमाः
+  “Coming” rather than “going” is necessary for the sense here.
+
+07053014c उत्सहन्तेऽन्यथाकर्तुं प्रतिज्ञां सव्यसाचिनः
+  Monier Williams allows अन्यथा-कृ- as a compound verb, but all the other
+  ten occurrences of अन्यथा + verbal form of कृ- in the Mahabharata
+  (01003133B, 01091013c, 03131015c, 03205010a, 05081053a, 07052011c,
+  07172048a, 13043025a, 13047036a, 16009027c) are printed as non-compounds. Of
+  these, seven consist of अन्यथा कर्तुम्, including two further occurrences
+  of the पाद-phrase उत्सहन्ते ऽन्यथा कर्तुम्, one in the previous
+  chapter (07052011c), the other later in the same parvan (07172048a). I am
+  therefore preferring the non-compounded form.
+
+07054005c प्रतिस्रोतःप्रवृत्ताश्च तथा गन्तुं समुद्रगाः
+  Clearly a typographic error (cf. the almost identical 07167002c:
+  प्रतिस्रोतः प्रवृत्ताश्च गन्तुं तत्र समुद्रगाः).
+
+07054010a स्नुषा श्वश्व्रानघायस्ते विशोके कुरु माधव
+
+07070037c सहसेनः सहामात्यो द्रापदेयानवारयत्
+
+07076029a इति कृष्णा महेष्वासौ यशसा लोकविश्रुतौ
+
+07079025c भूरिश्रवास्त्रिभिर्बाणैर्हेमपुङ्खः शिलाशितैः
+
+07085021c अभ्यवर्षञ्शरैस्तीक्ष्णैः कङ्कबर्हिणवाजितः
+
+07120069e अदृश्यौ च शरोघैस्तौ निघ्नतामितरेतरम्
+
+07164037a तं सात्यकिः प्रत्यविद्धत्तथैव दशभिः शरैः
+  It is certain that प्रत्यविद्धत् is a typographic error for
+  प्रत्यविध्यत्. The editor records no variant readings for the word, and
+  yet the Bombay Edition and manuscripts Dc1 and D6 both have प्रत्यविध्यत्
+  (PAE).
+
+07165044c महिमानं महाराज योगमुक्तस्य गच्छतः
+  It is certain that योगमुक्तस्य is a typographic error for योगयुक्तस्य.
+  The editor records no variant readings for the word, and yet the Bombay
+  Edition, P. S. S. Sastri's edition of the southern recension and manuscripts
+  Dc1, D5 and D7 all have योगयुक्तस्य (PAE).
+
+07165055c पलायनकृतोत्साहा दुद्रुवुः सर्वतो दिशम्
+
+08031004c युधिष्ठिरं चाभिभवन्नसपव्यं चकार ह
+  It is certain that असपव्यं is a typographic error for अपसव्यं. The
+  editor records no significant variant readings for the word, and yet the
+  Bombay Edition and manuscripts K1, D4 and D8 all have अपसव्यं (PAE).
+
+08062047c स वाजिसूतेष्वसनस्तथापत;द्यथा महावातहतो महाद्रुमः
+  The line is unconstruable unless the initial स is taken as part of the
+  following compound.
+
+08065014c अथाब्रवीत्पाणिना पाणिमाघ्न;न्संदष्टाष्ठो नृत्यति वादयन्निव
+
+08069017a यः स द्यूतजितां कृष्णां प्राह सत्पुरुषाधमः
+  I believe this is a rather celebrated case, and I am grateful to Saroja
+  Bhate for directing my attention to it.
+
+09001052c समाश्वासयत क्षत्ता वचसा मधुरेण ह
+  See Critical Notes.
+
+09006023a एतच्छ्रुत्वा यथाभूतं कुरु माधव यत्क्षमम्
+  See Critical Notes.
+
+09016058e संन्यस्तकवचा देहैर्विपत्रायुधजीविताः
+  This line has been reproduced unchanged as it appears in the printed
+  edition; however, it seems likely that विपत्रायुधजीविताः is a
+  typographic error for विपन्नायुधजीविताः, the reading found in the Bombay
+  Edition and the manuscript D10. This reading is not recorded by the editor
+  (though he does record other variants beginning with विपन्ना-). However,
+  manuscript K2 does read विपत्रायुधजीविताः, so I do not feel justified in
+  modifying the printed text. Manuscript information from PAE.
+
+09018062c पुनरेवान्वर्तन्त पाण्डवानाततायिनः
+
+10001050c श्लौकौ न्यायमवेक्षद्भिस्तत्त्वार्थं तत्त्वदर्शिभिः
+
+11008039a भवान्कर्मपरो यत्र बुद्धिश्रेष्ठश्च भारत
+  It is certain that कर्मपरो is a typographic error for धर्मपरो, as
+  suggested by James L. Fitzgerald (The Mahabharata translated, vol. 7,
+  Chicago and London, 2004, pp. 666-7). The editor records no variant readings
+  for the word, and yet the Bombay Edition and manuscripts K1, K2 and D3 all
+  have धर्मपरो (PAE).
+
+12047006a एतैश्चान्यैर्मुनिगणर्महाभागैर्महात्मभिः
+
+12089018a स्थानान्येतानि संगम्य प्रसङ्गे भूतिनाशनः
+  This line has been reproduced unchanged as it appears in the printed
+  edition; however, James L. Fitzgerald (The Mahabharata translated, vol. 7,
+  Chicago and London, 2004, p. 740) suggests that प्रसङ्गे is an error for
+  प्रसङ्गो. noting that this is the reading of the Citrasālā edition, but
+  that no variants are recorded by the editor. It is also the reading of the
+  Bombay Edition and manuscripts Da1 and Da2; however, manuscript K1 does read
+  प्रसङ्गे, so I do not feel justified in modifying the printed text.
+  Manuscript information from PAE.
+
+12155004c तपसैव हि सिध्यन्ति तपो मूलं हि साधनम्
+  I am grateful to James L. Fitzgerald for pointing out this error
+  (तपोमूलं must be a बहुव्रीहि compound meaning “having asceticism for
+  its basis”).
+
+12244011a व्यवसायात्मिका बुद्धिर्मनोव्याकरणात्मकम्
+  I am grateful to Kirti Sharad Thakar for pointing out this error.
+
+12291043c योऽहं सोहऽमिति ह्युक्त्वा गुणाननु निवर्तते
+
+12292027c दिवसान्ते गुणानेतानभ्येत्यैकोवतिष्ठति
+
+12309024c ऋत्वास्यः समबलशुक्लकृष्णनेत्रो; मांसाङ्गो द्रवति वयोहयो नराणाम्
+  It is certain that मांसाङ्गो is a typographic error for मासाङ्गो. The
+  editor records no variant readings for the word, and yet the Bombay and
+  Kumbakonam editions and manuscripts K1 and D4 all have मासाङ्गो (PAE). I am
+  grateful to James L. Fitzgerald for pointing out this error.
+
+12319002c पादात्प्रभृतिगात्रेषु क्रमेण क्रमयोगवित्
+  I am grateful to James L. Fitzgerald for pointing out this error (प्रभृति
+  when governed by the ablative पादात् must be an independent word).
+
+12323057e परां गतिमनुप्राप्त इति नैष्ठिकमज्जसा
+
+12324024c न क्षुत्पिपासे राजेन्द्र भूमेश्च्छिद्रे भविष्यतः
+
+12331030a श्वेतदीपे मया दृष्टास्तादृशावृषिसत्तमौ
+
+12331035c श्वेतदीपे त्वया दृष्ट आवयोः प्रकृतिः परा
+  I am grateful to James L. Fitzgerald for pointing out this error.
+
+12334014c एकान्तिनां शरणदोऽभयदो गतिदोऽस्तु वः; स मखभागहरस्त्रिगुणातिगः
+12334015a चतुष्पञ्चधरः पूर्ते;ष्टयोश्च फलभागहरः
+  I am grateful to Kirti Sharad Thakar and Samita Vasant Shinde for correcting
+  what must be an editorial slip in the division of the text into पादs. The
+  critical note says, “Very probably एकान्तिनां is a marginalia for वः and
+  should not be regarded as part of the line”; however, the version adopted in
+  the electronic text is clearly preferable.
+
+12338005a इदं पुरुषसुक्तं हि सर्ववेदेषु पार्थिव
+
+12342008c प्रोवाच वचनं श्लष्णं प्राज्ञो मधुरया गिरा
+
+13016013a स दृष्ट्ववान्महादेवमस्तौषीच्च स्तवैर्विभुम्
+
+13023006a न ब्राह्मणः साधयते हव्यं दैवात्प्रसिद्ध्यति
+
+13027098c भजेद्वाचा मनसा कर्मणा च; भक्त्या युक्तः परया श्रद्धधानः
+
+13028022a ततः संतापयामास बिबुधांस्तपसान्वितः
+
+13059005a म्रियते याचमानो वै तमनु म्रियते ददत्
+  This line has been reproduced unchanged as it appears in the printed text;
+  however, it seems likely that the final word should appear as ऽददत्.
+
+13061025a पितृंश्च पितृलोकस्थान्देवलोके च देवताः
+
+13076007c क्लैशैर्विप्रं योऽफलैः संयुनक्ति; तस्यावीर्याश्चाफलाश्चैव लोकाः
+
+13091001c भृग्वङ्गरसके काले मुनिना कतरेण वा
+
+13101024c पितॄणां मानुषाणां च कान्तायास्त्वनुपूर्वशः
+
+13110062a कलहंसविनिर्घोषैर्नूपूराणां च निस्वनैः
+
+13125022c न भाति कालेऽभिहितं तेनासि हरिण कृशः
+
+13134027c प्रवक्तॄन्पृच्छते योऽन्यान्स वै ना पदमर्च्छति
+  This line has been reproduced unchanged as it appears in the printed text;
+  however, as the editor's critical note observes, “नापदम्, that is <na
+  āpadam> (for ना पदम्) is certainly more natural”.
+
+13154022c अपश्यन्त्याः प्रियं पुत्रं यत्र दीर्यति मेऽद्य वै
+  It is certain that यत्र is a typographic error for यन्न. The
+  editor records no variant readings for the word, and yet the Bombay,
+  Calcutta and Kumbakonam editions and manuscript D8 all have यन्न
+  (PAE). I am grateful to Giulio Geymonat for pointing out this error.
+
+14011010a व्याप्तास्वथासु वृत्रेण रसे च विषये हृते
+
+14017035e तच्छ्रुत्वा नैष्ठिकीं बुद्धिं बुद्ध्येथाः कर्मनिश्चयात्
+
+15005006a यच्चाहं पाण्डुपुत्रेण गुणवत्सु महात्मसु
+  It is certain that पाण्डुपुत्रेण is a typographic error for पाण्डुपुत्रेषु.
+  The editor records no variant readings for the word, and yet the Bombay
+  Edition, P. S. S. Sastri's edition of the southern recension and manuscripts
+  K3, K4 and D9 all have पाण्डुपुत्रेषु (PAE).
+
+15033012a इयं च माता ज्येष्ठा मे वीतवाताध्वकर्शिता
+  It is certain that वीतवाताध्वकर्शिता is a typographic error for
+  शीतवाताध्वकर्शिता. The editor records no variant readings for
+  वीत-, and yet the Bombay Edition, P. S. S. Sastri's edition of
+  the southern recension and manuscripts K3, K4 and D9 all have
+  शीतवाताध्वकर्शिता (PAE).
+
+15044008a मा स्म शोके मनः कार्षीर्दिष्टेन व्यथते बुधः
+  The sense demands दिष्टे न.
+
+15044039c गम्यतां पुत्र मैव त्वं वोचः कुरु वचो मम
+  It is certain that मैव is a typographic error for मैवं. The editor
+  records no significant variant readings for the word, and yet the Bombay
+  Edition and manuscripts K3, K4 and D9 all have मैवं (PAE).
+
+16004004c ते सागरस्योपरिष्ठादवर्त;न्मनोजवाश्चतुरो वाजिमुख्याः
+
+16008039a तत्सागरसमप्रख्यं वृष्णिचक्रं महर्धिमत्
+
+16009012a पुनः पुनर्न मृश्यामि विनाशममितौजसाम्
+  It is certain that मृश्यामि is a typographic error for मृष्यामि. The
+  editor records no significant variant readings for the word, and yet the
+  Bombay Edition and manuscripts K3, K4 and D9 all have मृष्यामि (PAE).
+
+17001011a मातृभिः सह धर्मात्मा कृत्वोदकमतन्द्रितः
+  It is certain that मातृभिः is a typographic error for भ्रातृभिः. The
+  editor records no variant readings for the word, and yet the Bombay Edition
+  and manuscripts K3, K4 and D9 all have भ्रातृभिः (PAE).
+
+18001016c द्रौपद्याश्च परिक्लेशं न चिन्तयतुमर्हसि
+  It is certain that चिन्तयतुम् is a typographic error for चिन्तयितुम्. The
+  editor records no variant readings for the word, and yet the Bombay Edition
+  and manuscripts K3, K4 and D8 all have चिन्तयितुम् (PAE).

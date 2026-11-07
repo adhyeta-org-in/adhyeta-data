@@ -1,0 +1,408 @@
+#!/usr/bin/env python3
+"""Mahabharata BORI Critical Edition translator (initial, placeholders).
+
+Reads the BCE e-text from the srcdir passed as argv[1] (this script's own
+directory: MBh00.txt-MBh18.txt plus the checked-in `uuids.tsv` key map)
+and writes finished adoc documents as .xml files under the staging dir
+passed as argv[2], at the old pipeline's site paths (www/sa/i/<slug>/...).
+
+Port of raw/bombay.indology.info/valmikiramayanam-bce/translate; document
+structure, meta and uuid assignment match it, adjusted for MBh:
+- Content comes from every *.txt in srcdir, sorted, minus the first one.
+  That first file is MBh00.txt (header prose plus the BORI/J. D. Smith
+  credit); it is dropped exactly like the Ram translator drops Ram00.txt.
+  `uuids.tsv`/`ids` are never parsed as content (not *.txt).
+- Line numbers are nine chars PPAAAVVVP: parvan (2 digits), adhyaya
+  (3 digits), verse/sloka (3 digits, 000 is a real verse), pada slot
+  (1 letter). A lowercase slot (a/c/e) starts a 2-pada verse line;
+  `;` marks the pada split in long metres. An UPPERCASE slot (A/B/..)
+  continues a prose (gadya) block; lines sharing one verse number form
+  one block. A SPACE slot marks a speaker header (e.g. `संजय उवाच`);
+  it shares its verse number with the verse/prose that follows it.
+- Uuids come from <srcdir>/uuids.tsv as <PP.AAA><TAB><uuid> (plus
+  `index` and `PP` keys), falling back to the bare ordered `ids` list
+  (index, then per parvan the parvan entry + its adhyayas), falling back
+  to deterministic uuid5 of the site path. Never random.
+- Meta mirrors the Ram translator: source "<work title> <suffix>",
+  title per doc kind ("<work> BCE", parvan name, "अध्यायः <n>").
+  REVIEWER matches the Ram pipeline for now.
+- Every adhyaya carries one `xref @rel="prev"` naming the adhyaya
+  before it in reading order (parvan ascending, then adhyaya), so the
+  whole work is one chain from 01.001 to 18.005; the first has no prev.
+- Text is NFC-normalized (SSG requires NFC sources). Files are CRLF;
+  lines are split with splitlines() so no CR survives.
+
+PLACEHOLDERS (greppable, replaced one by one later; never half-Sanskrit):
+- TODO-SOURCE-BORI .... source suffix until the book wording lands.
+- TODO-COPYRIGHT-BORI . copyright until the BORI string lands.
+- summary/hook/beats ..... empty until the TSVs land (section omitted).
+- TODO-CLOSER:PP.AAA .... adhyaya-end <vg> text (printed-book colophon,
+  e.g. `इति श्रीमहाभारते ... अध्यायः`, synthesized: the e-text carries
+  no colophon lines).
+- TODO-PARVAN-END:PP ..... parvan-end <vg> text on each last adhyaya.
+- <v type="uvaca"> ........ speaker headers (414 distinct `X उवाच`;
+  Ram has none, so this element is new).
+- <v type="prose"> ......... gadya lines (Ram has none; no danda added).
+
+Stdlib only. No timestamps, no randomness.
+"""
+
+import os
+import sys
+import unicodedata
+import uuid
+
+# English telling lives beside the e-text as plain TSVs: hooks.tsv,
+# beats.tsv and summaries.tsv hold one "PP.AAA TAB text" line per
+# adhyaya, and uuids.tsv holds one "<key> TAB <uuid>" line per
+# document (index, each parvan PP, each adhyaya PP.AAA). Absent TSVs
+# mean placeholders; no shared tools/ store is needed.
+def load_text_map(sd: str, kinds) -> dict:
+    out: dict = {}
+    for kind in kinds:
+        fp = os.path.join(sd, kind + ".tsv")
+        if not os.path.exists(fp):
+            continue
+        with open(fp, "r", encoding="utf-8") as f:
+            for line in f.read().split("\n"):
+                if not line.strip():
+                    continue
+                key, _, text = line.partition("\t")
+                if key and text:
+                    out[(kind, key.strip())] = text.strip()
+    return out
+
+
+def load_uuid_map(sd: str) -> dict:
+    fp = os.path.join(sd, "uuids.tsv")
+    out: dict = {}
+    if not os.path.exists(fp):
+        return out
+    with open(fp, "r", encoding="utf-8") as f:
+        for line in f.read().split("\n"):
+            if not line.strip():
+                continue
+            key, _, val = line.partition("\t")
+            if key and val:
+                out[key.strip()] = val.strip()
+    return out
+
+
+SITE_SLUG = "mahabharata-bce"
+SOURCE_SUFFIX = "TODO-SOURCE-BORI"
+COPYRIGHT = "TODO-COPYRIGHT-BORI"
+REVIEWER = "Karthik Iyer"
+UUID_NAMESPACE = uuid.NAMESPACE_URL
+SPLIT_PADA_IDS = ("b", "d", "f", "h")
+
+
+title = "महाभारतम्"
+
+
+def to_devanagari_no(n: int):
+    nos = ["०", "१", "२", "३", "४", "५", "६", "७", "८", "९"]
+
+    y = ""
+    for x in str(n):
+        y += nos[int(x)]
+    return y
+
+
+def to_parvan(n: int) -> str:
+    parvans = [
+        "आदिपर्व",
+        "सभापर्व",
+        "आरण्यकपर्व",
+        "विराटपर्व",
+        "उद्योगपर्व",
+        "भीष्मपर्व",
+        "द्रोणपर्व",
+        "कर्णपर्व",
+        "शल्यपर्व",
+        "सौप्तिकपर्व",
+        "स्त्रीपर्व",
+        "शान्तिपर्व",
+        "अनुशासनपर्व",
+        "आश्वमेधिकपर्व",
+        "आश्रमवासिकपर्व",
+        "मौसलपर्व",
+        "महाप्रस्थानिकपर्व",
+        "स्वर्गारोहणपर्व",
+    ]
+    return parvans[n - 1]
+
+
+def el_escape(x: str) -> str:
+    return x.replace("&", "&amp;").replace("<", "&lt;")
+
+
+def attr_escape(x: str) -> str:
+    return el_escape(x).replace('"', "&quot;")
+
+
+def tx(x: str) -> str:
+    return el_escape(unicodedata.normalize("NFC", x))
+
+
+def get_uuids_for_work(fn: str) -> list:
+    if not os.path.exists(fn):
+        return []
+    with open(fn, "r", encoding="utf-8") as f:
+        uuids = [x for x in f.read().split("\n") if x.strip()]
+    uuids.reverse()
+    return uuids
+
+
+def uuid_for(loc: str, uuids: list) -> str:
+    if uuids:
+        return uuids.pop()
+    return str(uuid.uuid5(UUID_NAMESPACE, loc))
+
+
+def write_text(path: str, data: str) -> None:
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8", newline="\n") as f:
+        f.write(data)
+
+
+def set_data(dx: dict, x: str) -> None:
+    parvan = int(x[0:2])
+    adhyaya = int(x[2:5])
+    verse = int(x[5:8])
+    slot = x[8]
+    if parvan not in dx:
+        dx[parvan] = {}
+    ax = dx[parvan]
+    if adhyaya not in ax:
+        ax[adhyaya] = {}
+    vx = ax[adhyaya]
+    if verse not in vx:
+        vx[verse] = []
+    items = vx[verse]
+    if slot == " ":
+        items.append(("header", slot, x[9:].lstrip()))
+    elif slot.isupper():
+        items.append(("prose", slot, x[9:].lstrip()))
+    else:
+        for i, p in enumerate(x[9:].split(";")):
+            items.append(("verse", chr(i + ord(slot)), p.lstrip()))
+
+
+def adhyaya_url(parvan: int, adhyaya: int) -> str:
+    """Public, extensionless path of one adhyaya: what an xref @url names."""
+    return (
+        "/sa/i/" + SITE_SLUG + "/" + str(parvan).zfill(2) + "/" + str(adhyaya).zfill(3)
+    )
+
+
+def meta_block(title_text: str, prev_url=None, summary: str = "") -> str:
+    ys = []
+    ys.append("<meta>")
+    ys.append("<copyright>" + tx(COPYRIGHT) + "</copyright>")
+    ys.append("<source>" + tx(title + " " + SOURCE_SUFFIX) + "</source>")
+    ys.append("<title>" + tx(title_text) + "</title>")
+    if summary:
+        ys.append("<summary>" + tx(summary) + "</summary>")
+    ys.append("<reviewer>" + tx(REVIEWER) + "</reviewer>")
+    if prev_url is not None:
+        ys.append('<xref rel="prev" url="' + attr_escape(prev_url) + '"/>')
+    ys.append("</meta>")
+    return "\n".join(ys)
+
+
+def parvan_list_doc(u: str) -> str:
+    ys = []
+    ys.append('<document uuid="' + attr_escape(u) + '">')
+    ys.append(meta_block(title + " BCE"))
+    ys.append("<matter>")
+    ys.append("<list>")
+    for p in range(1, 18 + 1):
+        ys.append(
+            "<li><ref url=\"/sa/i/"
+            + SITE_SLUG
+            + "/"
+            + str(p).zfill(2)
+            + '/">'
+            + tx(to_parvan(p))
+            + "</ref></li>"
+        )
+    ys.append("</list>")
+    ys.append("</matter>")
+    ys.append("</document>")
+    return "\n".join(ys) + "\n"
+
+
+def adhyaya_list_doc(u: str, p: int, p_name: str, xs: list) -> str:
+    ys = []
+    ys.append('<document uuid="' + attr_escape(u) + '">')
+    ys.append(meta_block(p_name))
+    ys.append("<matter>")
+    ys.append(
+        '<x-list path="/sa/i/' + SITE_SLUG + "/" + str(p).zfill(2) + '" depth="0" exclude="index.xml"/>'
+    )
+    ys.append("</matter>")
+    ys.append("</document>")
+    return "\n".join(ys) + "\n"
+
+
+def adhyaya_doc(
+    u: str,
+    slug: str,
+    parvan: int,
+    p_name: str,
+    adhyaya: int,
+    verses: dict,
+    last: bool,
+    prev_url=None,
+    summary: str = "",
+    hook: str = "",
+    beats: str = "",
+) -> str:
+    akey = f"{parvan:02d}.{adhyaya:03d}"
+    ys = []
+    ys.append('<document uuid="' + attr_escape(u) + '" x-slug="' + slug + '">')
+    ys.append(meta_block("अध्यायः " + to_devanagari_no(adhyaya), prev_url, summary))
+    ys.append("<matter>")
+    if hook or beats:
+        ys.append('<section lang="en">')
+        if hook:
+            ys.append('<p type="hook">' + tx(hook) + "</p>")
+        if beats:
+            ys.append('<p type="beats">' + tx(beats) + "</p>")
+        ys.append("</section>")
+    for verse in verses.keys():
+        items = verses[verse]
+        vparts = [t for t in items if t[0] == "verse"]
+        is_split = len(vparts) > 2 and [t for t in vparts if t[1] in SPLIT_PADA_IDS]
+        ys.append(
+            '<vg id="'
+            + str(parvan).zfill(2)
+            + "."
+            + str(adhyaya).zfill(3)
+            + "."
+            + str(verse).zfill(3)
+            + '">'
+        )
+        seen_verse = 0
+        for kind, pid, ptext in items:
+            if kind == "header":
+                ys.append('<v type="uvaca">' + tx(ptext) + "</v>")
+            elif kind == "prose":
+                ys.append('<v type="prose">' + tx(ptext) + "</v>")
+            else:
+                seen_verse += 1
+                if seen_verse == len(vparts):
+                    suffix = "॥ " + to_devanagari_no(verse)
+                elif is_split:
+                    suffix = "।" if pid in SPLIT_PADA_IDS else ""
+                else:
+                    suffix = "।"
+                ys.append("<v>" + tx(ptext + suffix) + "</v>")
+        ys.append("</vg>")
+    ys.append('<vg id="adhyaya-end">')
+    ys.append("<v>" + tx("TODO-CLOSER:" + akey) + "</v>")
+    ys.append("</vg>")
+    if last:
+        ys.append('<vg id="parvan-end">')
+        ys.append("<v>" + tx("TODO-PARVAN-END:" + str(parvan).zfill(2)) + "</v>")
+        ys.append("</vg>")
+    ys.append("</matter>")
+    ys.append("</document>")
+    return "\n".join(ys) + "\n"
+
+
+def consolidate(sd: str) -> dict:
+    names = sorted(n for n in os.listdir(sd) if n.endswith(".txt"))[1:]
+    xs = []
+    for name in names:
+        fp = os.path.join(sd, name)
+        print(fp)
+        with open(fp, "r", encoding="utf-8") as f:
+            for x in f.read().splitlines():
+                if not x.strip() or x.startswith("%"):
+                    continue
+                xs.append(x)
+    dx: dict = {}
+    for x in xs:
+        set_data(dx, x)
+    return dx
+
+
+def reading_order(dx: dict) -> list:
+    """Every (parvan, adhyaya) in reading order: parvan ascending, then adhyaya.
+
+    Kept separate from the dict iteration order below, which must stay as it
+    is: uuids are assigned by call order, so reordering the writes would
+    change every document's uuid.
+    """
+    return [(p, a) for p in sorted(dx.keys()) for a in sorted(dx[p].keys())]
+
+
+def generate(sd: str, dd: str) -> None:
+    dx = consolidate(sd)
+    uuids = get_uuids_for_work(os.path.join(sd, "ids"))
+    uuid_map = load_uuid_map(sd)
+    text_map = load_text_map(sd, ("summaries", "hooks", "beats"))
+
+    def resolve_uuid(key: str, loc: str) -> str:
+        if key in uuid_map:
+            return uuid_map[key]
+        return uuid_for(loc, uuids)
+
+    order = reading_order(dx)
+    prev_of = {}
+    for i in range(1, len(order)):
+        prev_of[order[i]] = order[i - 1]
+    write_text(
+        os.path.join(dd, "index.xml"),
+        parvan_list_doc(resolve_uuid("index", "sa/i/" + SITE_SLUG + "/index.xml")),
+    )
+    for parvan in dx.keys():
+        xss = list(dx[parvan].keys())
+        p_name = to_parvan(parvan)
+        pp = str(parvan).zfill(2)
+        write_text(
+            os.path.join(dd, pp, "index.xml"),
+            adhyaya_list_doc(
+                resolve_uuid(str(parvan).zfill(2), "sa/i/" + SITE_SLUG + "/" + pp + "/index.xml"),
+                parvan,
+                p_name,
+                xss,
+            ),
+        )
+        for s, adhyaya in enumerate(xss):
+            adhyaya_label = str(adhyaya).zfill(3)
+            akey = f"{pp}.{adhyaya_label}"
+            write_text(
+                os.path.join(dd, pp, adhyaya_label + ".xml"),
+                adhyaya_doc(
+                    resolve_uuid(
+                        akey,
+                        "sa/i/" + SITE_SLUG + "/" + pp + "/" + adhyaya_label + ".xml",
+                    ),
+                    adhyaya_label,
+                    parvan,
+                    p_name,
+                    adhyaya,
+                    dx[parvan][adhyaya],
+                    s == len(xss) - 1,
+                    None
+                    if (parvan, adhyaya) not in prev_of
+                    else adhyaya_url(*prev_of[(parvan, adhyaya)]),
+                    text_map.get(("summaries", akey), ""),
+                    text_map.get(("hooks", akey), ""),
+                    text_map.get(("beats", akey), ""),
+                ),
+            )
+
+
+def main(argv: list) -> None:
+    srcdir = argv[1]
+    destdir = argv[2]
+    print(srcdir)
+    print(destdir)
+    generate(srcdir, os.path.join(destdir, "www", "sa", "i", SITE_SLUG))
+
+
+if __name__ == "__main__":
+    main(sys.argv)
