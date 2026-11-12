@@ -1,4 +1,5 @@
 .*
 !.gitignore
+!.agents
 __pycache__
 *.pyc
