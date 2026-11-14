@@ -9,7 +9,7 @@ Second phase on the same story range, by the same agent that transcribed it: the
 
 ## Input and output
 
-- Story file `.sources/data/<ISSUE>/p<START>.md` as Phase A left it: passing the extract gate. The report path `.logs/<RUN>/<START>-proofread-report.md` (`<START>` = story start page, 3 digits; `000` for prelude) — both given by the coordinator, which created `.logs/<RUN>/` once per issue run.
+- Story file `.processing/samskrta_chandamama/<ISSUE>/p<START>.md` as Phase A left it: passing the extract gate. The report path `.processing/logs/<RUN>/<START>-proofread-report.md` (`<START>` = story start page, 3 digits; `000` for prelude) — both given by the coordinator, which created `.processing/logs/<RUN>/` once per issue run.
 - The same story file amended: every routing lands as a block at its span. Story text is otherwise byte-identical.
 - Format reference: `.agents/refs/chandamama/1984_04/p01.proofread.md` — verdicts (`{del:}`/`{ins:}`) promoted from print, the supplied `{ins:"}`, the kept `{sug-ins:यदा सोमः}` candidate. Compare against `p01.extract.md` to see exactly what Phase B may change (blocks only) and what it must not (text).
 - Report file written directly by this agent at the given path (never anywhere else), incrementally as rulings land — a crash must lose at most the current paragraph.

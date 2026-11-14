@@ -4,7 +4,7 @@
 Usage:
   python3 render.py <ISSUE> [--dpi N] [--force]
 
-Renders `.sources/data/<ISSUE>.pdf` to `.sources/data/<ISSUE>/<NN>.jpg`
+Renders `.processing/samskrta_chandamama/<ISSUE>.pdf` to `.processing/samskrta_chandamama/<ISSUE>/<NN>.jpg`
 (`<NN>` = scan sequence, 1-based, no zero-pad) via pdftoppm. Skips pages
 already rendered unless --force. Verifies the count against pdfinfo when
 available. Paths resolve from the repo root regardless of cwd.
@@ -47,8 +47,8 @@ def main():
         print("usage: render.py <ISSUE> [--dpi N] [--force]", file=sys.stderr)
         sys.exit(2)
     issue = args[0]
-    pdf = ROOT / ".sources" / "data" / (issue + ".pdf")
-    outdir = ROOT / ".sources" / "data" / issue
+    pdf = ROOT / ".processing" / "samskrta_chandamama" / (issue + ".pdf")
+    outdir = ROOT / ".processing" / "samskrta_chandamama" / issue
     if not pdf.is_file():
         print("no such PDF: %s" % pdf, file=sys.stderr)
         sys.exit(1)

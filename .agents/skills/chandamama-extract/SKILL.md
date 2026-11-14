@@ -9,8 +9,8 @@ Transcribes what the print shows, nothing more. Output is one story file for the
 
 ## Input and output
 
-- Assignment from the coordinator: story start page `<START>`, end page (exclusive), and the output path `.sources/data/<ISSUE>/p<START>.md`.
-- Page images: `.sources/data/<ISSUE>/<NN>.jpg` for the range only. Never open other ranges' scans.
+- Assignment from the coordinator: story start page `<START>`, end page (exclusive), and the output path `.processing/samskrta_chandamama/<ISSUE>/p<START>.md`.
+- Page images: `.processing/samskrta_chandamama/<ISSUE>/<NN>.jpg` for the range only. Never open other ranges' scans.
 - Story file you write: one `{pgb}`-terminated page span per scan page, in scan order — each span the verbatim transcription of that page — followed by a tool-generated `## Joints` index. No sidecars, no scattered files, no `/tmp` copies.
 - Format reference: `.agents/refs/chandamama/1984_04/p01.extract.md` with scans `01.jpg`–`04.jpg`. Before your first page, study the p01 span (file start through the first `{pgb}`) against `01.jpg`: the mid-section `{pb}` column joint, the `{wb}` page joint closed by `{pgb}`, the `{sug-ins:}` candidate, the unbalanced print quotes kept as seen.
 

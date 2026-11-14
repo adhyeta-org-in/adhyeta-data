@@ -9,11 +9,11 @@ The coordinator owns the issue run and talks to the user. It never transcribes o
 
 ## Input and output
 
-- Issue source: `.sources/data/<ISSUE>.pdf`. Render with the tool (300 DPI; `--dpi 400` only if print is illegible at 300 DPI):
+- Issue source: `.processing/samskrta_chandamama/<ISSUE>.pdf`. Render with the tool (300 DPI; `--dpi 400` only if print is illegible at 300 DPI):
   `python3 .agents/tools/chandamama/render.py <ISSUE> [--dpi N]`
-  This writes `.sources/data/<ISSUE>/<NN>.jpg` (`<NN>` = scan sequence, 1-based, no zero-pad), skips pages already rendered, and verifies the count against the PDF. Never hand-roll pdftoppm loops; every agent renders through this script so output is identical every time. and the range index `.sources/data/<ISSUE>.story_index` — one story start page per line, `#` comments allowed. Each story runs from its start page to the page before the next start; the last runs to the last scan JPG. (Count JPGs for the issue end; never trust memory.)
-- Run log: `.logs/<RUN>/` created once per issue run, `<RUN>` = `<YYYYMMDD_HHMM>_samskrta_chandamama_<issue>` (e.g. `.logs/20261114_0930_samskrta_chandamama_1985_04/`). Pass this path to every story-agent. Create it before dispatching; workers create it if absent (same path — harmless).
-- Per story: `.sources/data/<ISSUE>/p<START>.md` (story file) + `.logs/<RUN>/<START>-proofread-report.md` (`<START>` = start page zero-padded to 3 digits — story_index `5` → `p005.md`; `000` for prelude). Finished stories persist on disk even if other ranges fail, and a retry redoes only missing ranges.
+  This writes `.processing/samskrta_chandamama/<ISSUE>/<NN>.jpg` (`<NN>` = scan sequence, 1-based, no zero-pad), skips pages already rendered, and verifies the count against the PDF. Never hand-roll pdftoppm loops; every agent renders through this script so output is identical every time. and the range index `.processing/samskrta_chandamama/<ISSUE>.story_index` — one story start page per line, `#` comments allowed. Each story runs from its start page to the page before the next start; the last runs to the last scan JPG. (Count JPGs for the issue end; never trust memory.)
+- Run log: `.processing/logs/<RUN>/` created once per issue run, `<RUN>` = `<YYYYMMDD_HHMM>_samskrta_chandamama_<issue>` (e.g. `.processing/logs/20261114_0930_samskrta_chandamama_1985_04/`). Pass this path to every story-agent. Create it before dispatching; workers create it if absent (same path — harmless).
+- Per story: `.processing/samskrta_chandamama/<ISSUE>/p<START>.md` (story file) + `.processing/logs/<RUN>/<START>-proofread-report.md` (`<START>` = start page zero-padded to 3 digits — story_index `5` → `p005.md`; `000` for prelude). Finished stories persist on disk even if other ranges fail, and a retry redoes only missing ranges.
 - Pages before the first start go out as one prelude batch (`p000.md`): transcribe story text if any, else one `{x-com:non-story-page: <what>}` section per page, each closed with bare `{pgb}`.
 - Reference pair: `.agents/refs/chandamama/1984_04/p01.extract.md` (what a story file looks like leaving Phase A) and `p01.proofread.md` (what it looks like leaving Phase B), with scans `01.jpg`–`04.jpg`.
 
@@ -28,8 +28,8 @@ The coordinator owns the issue run and talks to the user. It never transcribes o
 
 ## Gates (story files only, never scattered sidecars)
 
-- Extract gate: `python3 .agents/tools/chandamama/lint.py --phase extract --story .sources/data/<ISSUE>/p<START>.md` — verdicts rejected; the only legitimate residuals are notes-only (paired-continuation notes, unbalanced print quotes kept as seen).
-- Proofread gate: `python3 .agents/tools/chandamama/lint.py --phase proofread --story .sources/data/<ISSUE>/p<START>.md` — re-run after Phase B amends; every error fixed, every note dispositioned in the report.
+- Extract gate: `python3 .agents/tools/chandamama/lint.py --phase extract --story .processing/samskrta_chandamama/<ISSUE>/p<START>.md` — verdicts rejected; the only legitimate residuals are notes-only (paired-continuation notes, unbalanced print quotes kept as seen).
+- Proofread gate: `python3 .agents/tools/chandamama/lint.py --phase proofread --story .processing/samskrta_chandamama/<ISSUE>/p<START>.md` — re-run after Phase B amends; every error fixed, every note dispositioned in the report.
 - After Phase B, only the proofread gate must pass. The extract gate necessarily fails once `{del:}`/`{ins:}` verdicts land and is not re-run as a gate.
 - Re-run with `--json` when feeding findings to another tool.
 - Run gates exactly as documented here, flags included; never improvise or normalize the command line (a dropped flag can turn a red gate green or crash the tool — test verbatim).

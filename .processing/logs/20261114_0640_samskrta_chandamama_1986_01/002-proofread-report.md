@@ -2,7 +2,7 @@
 
 ## Summary
 
-Story file `.sources/data/1986_01/p002.md` (4 page spans, 27 body chunks) passes `lint --phase proofread` with 0 errors. Three verified verdicts landed as blocks: one glued-word split promoted from the Phase A candidate (F1) and two supplied double-quote marks restoring balance (F2, F3). Three low/medium-confidence grammar forms are held as `{sug-…}` candidates for the user (F4–F6). The recurring stray tick before three `p003` speech opens was verified at 3x and read as print noise, keeping print's doubles with an `{x-com:}` on file. Print spelling/sandhi variants (`नाम्नाः`, `यदिने`-adjacent `तद्दिने`, `अज्ञात्वा`, `निषद्योगी`, `फल्गुम्फ`/`गुम्फ` beside `कदलीगुम्फ`, `कनकाम्बा च`) are kept as house variants with no blocks. One red tick after `अटन्` (p005:P4) was ignored as a proofreader mark. Text was transcribed directly from scans, not OCR output; no passages unchecked.
+Story file (4 page spans, 27 body chunks) passes `lint --phase proofread` with 0 errors. Three verified verdicts landed as blocks: one glued-word split promoted from the Phase A candidate (F1) and two supplied double-quote marks restoring balance (F2, F3). Three low/medium-confidence grammar forms are held as `{sug-…}` candidates for the user (F4–F6). The recurring stray tick before three `p003` speech opens was verified at 3x and read as print noise, keeping print's doubles with an `{x-com:}` on file. Print spelling/sandhi variants (`नाम्नाः`, `यदिने`-adjacent `तद्दिने`, `अज्ञात्वा`, `निषद्योगी`, `फल्गुम्फ`/`गुम्फ` beside `कदलीगुम्फ`, `कनकाम्बा च`) are kept as house variants with no blocks. One red tick after `अटन्` (p005:P4) was ignored as a proofreader mark. Text was transcribed directly from scans, not OCR output; no passages unchecked.
 
 ## Findings
 
