@@ -1,0 +1,23 @@
+# Proofread report: 1985_02 story p025 (पापस्य फलम्, scans 25–28)
+
+## Summary
+
+5 findings: 4 verdict blocks applied in-file (2 non-word print defects, 1 dropped-anusvara word substitution, 1 malformed imperative) and 1 held `{sug-}` candidate for the user. No systematic defect found; the one candidate pattern (print `तर्हिं` with anusvara, 3x) stands as a consistent print spelling, not a finding. The orth scanner reported zero hits on deblocked text, and the file is a hand transcription, not OCR output. Images stayed closed throughout Phase B; F4 and F5 are decided from grammar and context only, hence `unverified` (`*`).
+
+## Findings
+
+| # | Loc | Original | Suggestion | Cat | Sev | Conf | Why |
+|---|---|---|---|---|---|---|---|
+| F1 | p25:P6 मध्याह्नसमयः आसीत्। :w5 | `ब्राधते स्म` | `{del:ब्राधते}{ins:बाधते}` | OCR | error | high | `ब्राधते` is not a word; fierce heat needs `√बाध्` afflicts; Phase A verified the र-hook in print, so this corrects a print slip |
+| F2 | p26:P4 "एवं स्थिते, :w24 | `दैनान्दिनीम् आहारसमस्यां` | `{del:दैनान्दिनीम्}{ins:दैनन्दिनीम्}` | OCR | error | high | `दैनान्दिनीम्` is not a word; daily food needs `दैनन्दिनीम्`; single-matra difference verified in print |
+| F3 | p28:P2 "किन्तु भवती :w18 | `अतः मा खादितुं` | `{del:मा}{ins:मां}` | LEX | error | high | Prohibitive `मा` never governs a `-तुम्` infinitive; `खादितुं` needs accusative `मां` (cf. `मां खादितुं` in the same speech) |
+| F4 | p28:P4 "अये महाभागे! :w20 | `परिशील्यतु` | `{del:परिशील्यतु}{ins:परिशीलयतु}` | MRP | likely | medium* | `ल्यतु` is a malformed imperative; the series `चिन्तयतु, स्मरतु, त्यजतु` pins `परिशीलयतु`; `ल्य` vs `लय` read at 2x only |
+| F5 | p28:P6 इदानीं ब्रह्मराक्षसी :w11 | `विकासः कथं` | `{sug-del:विकासः}{sug-ins:विमोक्षः}` | LEX | likely | low* | `विकासः` is grammatical but senseless for escape from rakshasa-birth; `विमोक्षः` fits yet differs in two aksharas, and `मोक्षः`/`उद्धारः` also fit; needs user decision |
+
+## Unverified
+
+F4: settling needs a 3x crop of `परिशील्यतु`/`परिशीलयतु` on scan 28 (`ल्य` vs `लय`). F5: settling needs a 3x crop of `विकासः` on scan 28 (whether `का`/`स` could be `मो`/`क्ष`, or the word stands as the author's). Observation without block: p26:P8 `अरण्यस्य तत् वृक्षस्य समीपम्` reads `तत्` where `तस्य` would be smooth; `तत्` is grammatical only if taken with `समीपम्` across `वृक्षस्य`, so no block was issued (no Phase-A glyph cover) and the user may rule. (Phase B cannot reopen scans; all three go to the user.)
+
+## Coverage
+
+p25:P1 `{x-com:layout:` : skip layout-only. p25:P2 `# पापस्य` : skip title. p25:P3 पूर्वं ब्रह्मदत्तः : clean. p25:P4 सुशान्तः यावत् : clean. p25:P5 तद्देशस्य महाराजस्य : clean. p25:P6 मध्याह्नसमयः आसीत्। : F1. p25:P7 तदा अकस्मात् : clean. p25:P8 "भवती का? : clean. p25:P9 "अहम् एका : clean. p25:P10 राजा तदा : clean. p25:P11 `{category: जातककथा}` : skip metadata. p26:P1 `{x-com:layout:` : skip layout-only. p26:P2 तवान्। तदा : clean. p26:P3 "अहं तु : clean. p26:P4 "एवं स्थिते, : F2. p26:P5 एतेन प्रस्तावेन : clean. p26:P6 अनन्तरं राजा : clean. p26:P7 मन्त्री राजानम् : clean. p26:P8 तद्दिनात् आरभ्य : clean. p26:P9 अल्पे एव : clean. p26:P10 एतं डिण्डिमघोषं : clean. p27:P1 `{x-com:layout:` : skip layout-only. p27:P2 सहस्रं रूप्यकाणि!" : clean. p27:P3 एवं चिन्तयित्वा : clean. p27:P4 "पुत्र! इदानीं : clean. p27:P5 "मातः! मम : clean. p27:P6 सः महाराजम् : clean. p27:P7 राजा आश्चर्येण : clean. p27:P8 "ब्रह्मराक्षसीं पराजेतुम्" : clean. p27:P9 ब्रह्मराक्षसी बहुकालपर्यन्तं : clean. p27:P10 "नैव, मया : clean. p27:P11 तदा सा : clean. p28:P1 `{x-com:layout:` : skip layout-only. p28:P2 "किन्तु भवती : F3. p28:P3 "एषा वञ्चना। : clean. p28:P4 "अये महाभागे! : F4. p28:P5 चिन्तयतु। पापाचरणेन : clean. p28:P6 इदानीं ब्रह्मराक्षसी : F5. p28:P7 "भवती इतः : clean. p28:P8 ब्रह्मराक्षसी सुशान्तवचनम् : clean. p28:P9 'सुशान्तः सजीवं : clean. J1 p025:P3 `{pb}` -> p025:P4 fresh : ok (clean break, household to livelihood). J2 p025:P4 `{pb}` -> p025:P5 fresh : ok (clean scene shift to the king). J3 p025:P5 `{pb}` -> p025:P6 fresh : ok (column turn, hunt to noon rest). J4 p025:P10 `{wb}` -> p026:P2 `{pc}` : ok (solid word join चिन्तितवान्). J5 p026:P2 `{pb}` -> p026:P3 fresh : ok (column turn, proposal to reply). J6 p026:P4 `{pb}` -> p026:P5 fresh : ok (column turn, offer to counter-condition). J7 p026:P10 `{pb}` -> p027:P2 `{pc}` : ok (page turn, thought closes across pages, spaced join). J8 p027:P8 `{pb}` -> p027:P9 fresh : ok (column turn, arrival to waiting rakshasi). J9 p027:P11 `{pb}` -> p028:P2 fresh : ok (page turn, threat to rebuttal speech). J10 p028:P4 `{pb}` -> p028:P5 `{pc}` : ok (column turn, sermon continues, spaced join). J11 p028:P9 `{pb}` -> END : ok (story concludes with the generalship appointment).

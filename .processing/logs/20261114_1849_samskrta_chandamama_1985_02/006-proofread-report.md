@@ -1,0 +1,30 @@
+# Proofread report: 1985_02 story p006 (कांस्यदुर्गम्, scans 6–12)
+
+## Summary
+
+12 findings: 3 verdict blocks applied in-file (2 supplied missing quote marks, 1 quote-sort correction) and 9 held `{sug-}` candidates for the user, all glyph-level holds needing one scan check each. No systematic defect found; the prose is grammatical and the joints are clean, so no Patterns section. The orth scanner reported zero hits on deblocked text, and the file is a hand transcription, not OCR output. Images stayed closed throughout Phase B; every hold below is decided from grammar and context only, hence `unverified` (`*`).
+
+## Findings
+
+| # | Loc | Original | Suggestion | Cat | Sev | Conf | Why |
+|---|---|---|---|---|---|---|---|
+| F1 | p06:P7 यशोवर्धनः स्वकीये :w11 | `इच्छति स्म। किन्तु` | `{ins:"}` before `किन्तु` | STY | error | high | King's deliberation closes with `" इति` but opens with no mark; sentence boundary plus iti-closure pins the mate |
+| F2 | p11:P3 अनन्तरं सः :w6 | `सूचितवान् --- 'सूर्यवर्मा` | `{del:'}{ins:"}` (open in doubles) | STY | error | high | Spoken proposal with reporting verb takes doubles; inner question keeps singles; sort pinned by verb plus sentence start |
+| F3 | p11:P3 अनन्तरं सः :w20 | `निवारणीयः। सः कथं` | `{ins:'}` before `सः कथं` | STY | error | high | Quoted question closed by `' इत्यपि` needs its open; pinned by sentence start plus iti |
+| F4 | p06:P3 माहिष्मतीनगरस्य राजा :w5 | `षष्ठिवर्षाणि` | `षष्टिवर्षाणि` | OCR | likely | medium* | `षष्ठि` is not a word; sixty-year reign needs `षष्टि`; documented `ट`/`ठ` confusion |
+| F5 | p07:P4 दुष्टकार्येषु प्रसिद्धस्य :w27 | `उद्घषितवान्` | `उद्घोषितवान्` | OCR | likely | medium* | `उद्घषित` is not a word (`√घुष्` proclaims); adjacent `घण्टाघोषम्` shows the `ो` |
+| F6 | p10:P3 एकत सूर्यवर्मा :w1 | `एकत` | `एकत्र` or `एकतः` | OCR | likely | low* | `एकत` is not a word; paired `एकत्र`/`अपरत्र` or `-तस्` adverbs both fit; needs scan check |
+| F7 | p10:P3 एकत सूर्यवर्मा :w7 | `अपरत` | `अपरत्र` or `अपरतः` | OCR | likely | low* | `अपरत` is not a word; same pair as F6; needs scan check |
+| F8 | p10:P3 एकत सूर्यवर्मा :w29 | `बहोः कालात्` | `बहुकालात्` | OCR | likely | low* | Genitive plus ablative is ungrammatical here; standard is the compound `बहुकालात्` |
+| F9 | p11:P7 एतद्विषये आवश्यकं :w20 | `सीमातान्ते` | `सीमान्ते` | OCR | likely | medium* | `सीमातान्ते` is not a word; border context needs `सीमान्ते` |
+| F10 | p12:P8 एतावतिकाले नागरिकवेषे :w14 | `निमेषमात्रेणः` | `निमेषमात्रेण` | OCR | likely | medium* | Instrumental never takes visarga |
+| F11 | p11:P3 अनन्तरं सः :w46 | `विनायासं` | `अनायासं` or `निरायासं` | LEX | likely | low* | `विनायास` is not a standard formation for effortless; `निरायास`/`अनायास` expected |
+| F12 | p12:P8 एतावतिकाले नागरिकवेषे :w1 | `एतावतिकाले` | `एतावति काले` | CMP | likely | medium* | Two words fused; standard phrase is `एतावति काले` |
+
+## Unverified
+
+F4: settling needs a 3x crop of `षष्ठि`/`षष्टि` on scan 6 (`ट` vs `ठ`). F5: crop of `उद्घषित`/`उद्घोषित` on scan 7. F6/F7: crops of `एकत`/`अपरत` on scan 10 (`त्र` vs `त`, presence of visarga). F8: crop of `बहोः कालात्` on scan 10 (compound vs two words). F9: crop of `सीमातान्ते` on scan 11. F10: crop of `मात्रेणः` on scan 12 (stray visarga in print vs transcription slip). F11: crop of `विनायासं` on scan 11. F12: check spacing of `एतावति काले` on scan 12. (Phase B cannot reopen scans; all nine go to the user.)
+
+## Coverage
+
+p06:P1 `{x-com:layout:` : skip layout-only. p06:P2 `# कांस्यदुर्गम्` : skip title. p06:P3 माहिष्मतीनगरस्य राजा : F4. p06:P4 यशोवर्धनस्य तपोवर्धनः : clean. p06:P5 व्यापृतः भवति : clean. p06:P6 द्वितीयः पुत्रः : clean. p06:P7 यशोवर्धनः स्वकीये : F1. p07:P1 `{x-com:layout:` : skip layout-only. p07:P2 स्यात्। तथापि : clean. p07:P3 अल्पे एव : clean. p07:P4 दुष्टकार्येषु प्रसिद्धस्य : F5. p07:P5 इदानीं सभायां : clean. p07:P6 यशोवर्धनः एतेन : clean. p07:P7 करणीयम्? एवं : clean. p08:P1 `{x-com:layout:` : skip layout-only. p08:P2 सभासमाप्तेः अनन्तरं : clean. p08:P3 सूर्यवर्मा माण्डलिकेषु : clean. p08:P4 सूर्यवर्मा उद्याने : clean. p08:P5 विचारं प्रकटीकृतवान् : clean. p08:P6 महाराज! धर्माधर्म : clean. p09:P1 `{x-com:layout:` : skip layout-only. p09:P2 निर्णयम् अङ्गीकरोति : clean. p09:P3 तपोवर्धनः लौकिक : clean. p09:P4 प्रभो! सः : clean. p09:P5 तदा राजा : clean. p09:P6 एवं तर्हि : clean. p09:P7 सूर्यवर्मा किञ्चित्कालं : clean. p09:P8 अनन्तरं सः : clean. p10:P1 `{x-com:layout:` : skip layout-only. p10:P2 यशोवर्धनस्य सम्मतिं : clean. p10:P3 एकत सूर्यवर्मा : F6, F7, F8. p10:P4 स्वपक्षे योजनीयः। : clean. p10:P5 गुणवर्धनः ज्ञातवान् : clean. p10:P6 एवं यदा : clean. p10:P7 भवतः पिता : clean. p11:P1 `{x-com:layout:` : skip layout-only. p11:P2 अस्ति" इति : clean. p11:P3 अनन्तरं सः : F2, F3, F11. p11:P4 तदा गुणवर्धनः : clean. p11:P5 मदीयं कार्यं : clean. p11:P6 वन्तः' इति : clean. p11:P7 एतद्विषये आवश्यकं : F9. p11:P8 गुणवर्धनस्य वचनेन : clean. p12:P1 `{x-com:layout:` : skip layout-only. p12:P2 एव दूरीक्रियते : clean. p12:P3 एवंरीत्या सूर्यवर्मणः : clean. p12:P4 आत्मनः हननार्थं : clean. p12:P5 द्वितीयदिने रात्रौ : clean. p12:P6 अपि तस्य : clean. p12:P7 अकस्मात् पर्वतकन्दरात् : clean. p12:P8 एतावतिकाले नागरिकवेषे : F10, F12. J1 p006:P4 `{pb}` -> p006:P5 `{pc}` : ok (valid spaced word join). J2 p006:P7 `{pb}` -> p007:P2 `{pc}` : ok (F1 completes the quote pair across the page turn). J3 p007:P6 `{pb}` -> p007:P7 `{pc}` : ok. J4 p007:P7 `{pb}` -> p008:P2 fresh : ok (clean scene break sabha to garden). J5 p008:P4 `{pb}` -> p008:P5 `{pc}` : ok (speech continues across columns). J6 p008:P6 `{pb}` -> p009:P2 `{pc}` : ok. J7 p009:P8 `{pb}` -> p010:P2 fresh : ok (clean consent to return-home break). J8 p010:P3 `{pb}` -> p010:P4 `{pc}` : ok (quote continues across columns). J9 p010:P7 `{pb}` -> p011:P2 `{pc}` : ok. J10 p011:P5 `{wb}` -> p011:P6 `{pc}` : ok (solid word join मारितवन्तः). J11 p011:P8 `{pb}` -> p012:P2 `{pc}` : ok. J12 p012:P5 `{pb}` -> p012:P6 `{pc}` : ok. J13 p012:P8 `{pb}` -> END : ok (story ends mid-ambush; serial presumably continues; clean terminal close).
