@@ -1,0 +1,30 @@
+# Proofread report: 1984_05 story starting p021 (मूर्खग्रामः, scans 21–25)
+
+## Summary
+
+8 findings: 2 print misprints corrected as verdicts (SPL, error, high), 5 quote-mark rulings (STY, style, high), 1 held formation question with no file block (MRP, likely, low*). Systematic issues are print punctuation slips (single for double and stray marks at speech edges, 5 spots) and two single-akshara press errors. Scan images were used in Phase A only (glyphs verified at 2x–3x); all Phase B rulings here are from text, house style, and story sense. Orth scanner run on deblocked text: 0 findings. Loc below is story coordinates `pNN:Pm:word` (word counted on the deblocked chunk from 1) plus anchor words.
+
+## Findings
+
+| # | Loc | Original | Suggestion | Cat | Sev | Conf | Why |
+|---|---|---|---|---|---|---|---|
+| 1 | p021:P4:17 (फलं दृष्ट्वा) | `वृक्षात् अत्रचित्य आनीतम्` | `वृक्षात् अवचित्य आनीतम्` | SPL | error | high | `अत्रचित्य` is not a word; `अवचित्य` (gerund of अव√चि, having plucked) fits `वृक्षात् आनीतम्`; print read `अत्रचित्य` at 2x so one-akshara press slip |
+| 2 | p025:P8:18 (कान्तेशः तेन) | `सः प्रमिद्धः अपि` | `सः प्रसिद्धः अपि` | SPL | error | high | `प्रमिद्धः` is not a word; `प्रसिद्धः` (famous, as क्षीरवणिक्) is certain from sense; print read `प्रमिद्धः` (मि clear at 3x) so one-akshara press slip |
+| 3 | p021:P4:20 (फलं दृष्ट्वा) | `दृश्यते भोः!, इति` | `दृश्यते भोः!', इति` | STY | style | high | speech opens with `'` and print drops the close; position pinned before `, इति` |
+| 4 | p021:P7:3 ('किमर्थम् असम्भवम्?') | `?' नित्यानन्दयोगिनः … अयुक्तम्"` | `?' {ins:"}नित्यानन्दयोगिनः … अयुक्तम्"` | STY | style | high | short question `'…?'` is already a closed pair, so the answer speech needs its own open; sort follows print's `"` close |
+| 5 | p022:P2:52 (इति कोटीशस्य) | `दर्शनं भवति'" इति` | `दर्शनं भवति'` + drop `"` | STY | style | high | speech opens with `'` so the trailing `"` after `'` is a stray mark with no opener (print verified at 2x) |
+| 6 | p022:P3:10 ("तत् अहं) | `किल?"' इति` | `किल?"` + drop `'` | STY | style | high | speech opens with `"` so the trailing `'` after `"` is a stray mark with no opener (print verified at 2x) |
+| 7 | p024:P3:9,13 (स्वयं कान्तेशः) | `आसीत्। तानि … आगतवन्तः' इति` | `आसीत्। "तानि … आगतवन्तः" इति` | STY | style | high | quoted speech `तानि द्रष्टुम् एव वयम् आगतवन्तः` has print close but no open; spoken utterance takes doubles, so supply open `"` and correct close sort |
+| 8 | p021:P3:24 (एकं नगरम्) | `दूरदेशातः आगत्य` | `दूरदेशतः` or `दूरदेशात्` | MRP | likely | low* | तस्-adverb needs short `-तः` (`देशतः`) and ablative would be `देशात्`; long `आ` before `तः` matches neither; no block emitted (no Phase A flag on file), held for user |
+
+## Patterns
+
+Print quote-mark slips at speech edges (5 spots: F3–F7): singles where doubles were dropped or stray marks left after the true close, e.g. `भवति'"` (p022:P2), `किल?"'` (p022:P3), unopened `तानि … आगतवन्तः'` (p024:P3). Single-akshara press errors (2 spots: F1, F2): `अत्रचित्य` for `अवचित्य`, `प्रमिद्धः` for `प्रसिद्धः`.
+
+## Unverified
+
+F8 `दूरदेशातः` (p021:P3:24): print reading `देशातः` verified at 2x in Phase A, but the form is held because two one-edit corrections (`दूरदेशतः`, `दूरदेशात्`) both fit `मासतः पूर्वं … आगत्य` and no dictionary check was available in this session. Settles with: a look at the scan line for a possible `ा`-matra slip, and a lexicon check whether तस् ever follows a lengthened stem vowel. `मासतः` in the same sentence was left clean (short `-तः`, consistent तस्-form, no anomaly found). Nothing else is held: orth scan 0 hits, sandhi openness (`इदमिदानीमेव`, kept visarga before voiced sounds) and hyphenated compounds (`पार्श्वस्थ-उपमार्गतः`, `पञ्चदश-वर्षीयः`, `विविध-फलदाता`, `स्वीय-अज्ञानस्य`) logged as consistent house style, not findings.
+
+## Coverage
+
+p021:P1 {x-com:layout:} : skip layout-only chunk. p021:P2 # मूर्खग्रामः : skip title chunk. p021:P3 एकं नगरम् : F8. p021:P4 फलं दृष्ट्वा : F1, F3. p021:P5 'अत्र आश्चर्यस्य : clean. p021:P6 {pc}वान्। 'नितराम् : clean. p021:P7 'किमर्थम् असम्भवम्? : F4. p021:P8 कान्तेशस्य गृहं : clean. p021:P9 {author: श्रीमाता} : skip metadata chunk. p022:P1 {x-com:layout:} : skip layout-only chunk. p022:P2 {pc}इति कोटीशस्य : F5. p022:P3 "तत् अहं : F6. p022:P4 "अरे! तथा : clean. p022:P5 गोविन्दस्य वचनं : clean. p022:P6 अनन्तरं कोटीशः : clean. p023:P1 {x-com:layout:} : skip layout-only chunk. p023:P2 सः "किम् : clean. p023:P3 "एवं वा! : clean. p023:P4 त्रयः अपि : clean. p023:P5 {pc}गृहे एकम् : clean. p023:P6 एवं रीत्या : clean. p023:P7 तदा पञ्चदश-वर्षीयः : clean. p023:P8 'भवतां गृहस्य : clean. p023:P9 'एवं वा? : clean. p024:P1 {x-com:layout:} : skip layout-only chunk. p024:P2 {pc}उक्तवान्। : clean. p024:P3 स्वयं कान्तेशः : F7. p024:P4 'मम जनकः : clean. p024:P5 बालकस्य वचने : clean. p024:P6 {pc}आगतः। ते : clean. p024:P7 क्रोधतप्तः कोटीशः : clean. p024:P8 'आम्' इति : clean. p024:P9 'किमर्थं तथा : clean. p024:P10 'यदा वयं : clean. p024:P11 'किम्, असत्यवचनेन : clean. p024:P12 'किमर्थं न : clean. p024:P13 किञ्चित्कालानन्तरं गोविन्दः : clean. p024:P14 'ये मम : clean. p025:P1 {x-com:layout:} : skip layout-only chunk. p025:P2 {pc}पृच्छामि, तदा : clean. p025:P3 'इदानीं भवान् : clean. p025:P4 'अस्तु। वयं : clean. p025:P5 'अस्तु' इति : clean. p025:P6 अनन्तरं सर्वे : clean. p025:P7 'आम्, यत्र : clean. p025:P8 कान्तेशः तेन : F2. J1 p021:P5 {wb} -> p021:P6 {pc} : ok (उक्त + वान् solid). J2 p021:P8 {pb} -> p022:P2 {pc} : ok (आगन्तव्यम् इति spaced). J3 p022:P3 {pb} -> p022:P4 fresh : ok (clean column break). J4 p022:P6 {pb} -> p023:P2 fresh : ok (clean page break). J5 p023:P4 {pb} -> p023:P5 {pc} : ok (तस्य गृहे spaced). J6 p023:P9 {pb} -> p024:P2 {pc} : ok (बालकः उक्तवान् spaced). J7 p024:P5 {pb} -> p024:P6 {pc} : ok (क्रोधः आगतः spaced, masc agreement). J8 p024:P14 {pb} -> p025:P2 {pc} : ok (अहं पृच्छामि spaced). J9 p025:P5 {pb} -> p025:P6 fresh : ok (clean column break). J10 p025:P8 {pb} -> END : ok (clean range end). Anchors verified against file order; every finding F1–F8 appears above; chunk counts match lint P numbers.

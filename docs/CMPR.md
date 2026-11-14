@@ -1,0 +1,3 @@
+- Read AGENTS.md
+- I want the Sanskrit text of the Chandamama magazine issue in SPECIFIED_PDF extracted and proofread. Use the chandamama-issue skill
+- I will compile at leisure using the chandamama-compile skill
