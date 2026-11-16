@@ -9,10 +9,14 @@ Transcribes what the print shows, nothing more. Output is one story file for the
 
 ## Input and output
 
-- Assignment from the coordinator: story start page `<START>`, end page (exclusive), and the output path `.processing/samskrta_chandamama/<ISSUE>/p<START>.md`.
+- Assignment from the coordinator: story start page `<START>`, end page (exclusive), the output path `.processing/samskrta_chandamama/<ISSUE>/p<START>.md`, and the sansar draft dir `.processing/samskrta_chandamama/<ISSUE>/draft/` (`<NN>.txt` per scan page). The draft is keystrokes only — every word ships only after eyes verification against the scan (see draft-first variant).
 - Page images: `.processing/samskrta_chandamama/<ISSUE>/<NN>.jpg` for the range only. Never open other ranges' scans.
 - Story file you write: one `{pgb}`-terminated page span per scan page, in scan order — each span the verbatim transcription of that page — followed by a tool-generated `## Joints` index. No sidecars, no scattered files, no `/tmp` copies.
 - Format reference: `.agents/refs/chandamama/1984_04/p01.extract.md` with scans `01.jpg`–`04.jpg`. Before your first page, study the p01 span (file start through the first `{pgb}`) against `01.jpg`: the mid-section `{pb}` column joint, the `{wb}` page joint closed by `{pgb}`, the `{sug-ins:}` candidate, the unbalanced print quotes kept as seen.
+
+## Draft-first (sansar) variant (default)
+
+The coordinator supplies a torch sansar draft per scan page (`draft/<NN>.txt`: margin-trimmed, ≤1.8 MP fit, fixed prompt, thinking off, greedy). Paste each page's draft as raw material, then walk the image top-to-bottom correcting every word to print. Every draft word ships only after eyes verification against the scan; every ambiguous glyph gets a second, tighter crop exactly as in from-scratch transcription. Never trust the draft's line order, paragraphing, joins, furniture, quotes, or titles — the layout survey, `{pb}`/`{pc}`/`{wb}`/`{pgb}` joints, folio, stripped furniture, and `## Joints` all come from your own reading, and the extract gate is unchanged. Diff-review against the draft is forbidden — verify against print. Automation bias is the failure mode: the 2026-11-16 p029 trial (evidence in `.scratch/sansar_draft_trial/`) pasted the draft's `सन्यसिनं` unverified and it stood until a baseline disagreement forced the 3x crop that confirmed it; the same trial's crops overturned two baseline normalizations, `उच्यमानं`→`उच्यमान` and `दत्त्वा`→`दत्वा`, each with same-line positive controls.
 
 ## Method (per page, in order, while the image is open)
 
@@ -54,7 +58,7 @@ Record marks as seen; never normalize, upgrade, or supply. Quote sorts are era-d
 
 ## Do not
 
-- Do not run OCR tools or any grammar fixer during transcription; eyes and PIL crops only. Enlarge crops under `/tmp` and re-read to verify every ambiguous glyph with a second, tighter crop.
+- Do not run OCR tools (other than the coordinator-supplied sansar draft — keystrokes only, verified word-by-word per the draft-first variant) or any grammar fixer during transcription; eyes and PIL crops only. Enlarge crops under `/tmp` and re-read to verify every ambiguous glyph with a second, tighter crop.
 - Do not emit verdicts, tagged forms, summaries, or English prose — story text plus blocks only.
 - Do not strip `{pb}`, `{pc}`, `{wb}`, or `{pgb}` markers; compile applies verdicts but the file keeps the markers as the audit trail.
 - Do not open pages outside the assigned range; do not touch other ranges' files.
