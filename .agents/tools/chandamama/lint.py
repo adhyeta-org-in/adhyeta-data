@@ -61,6 +61,29 @@ def check_block(inner, phase=None):
     return None
 
 
+def check_braces(text):
+    """Token-by-token brace scan: '{' opens a block closed by the next '}'.
+    Reports stray '}' and unclosed '{' with nearby context. BLOCK_RE only
+    sees complete pairs, so without this strays pass silently."""
+    errors = []
+    i, n = 0, len(text)
+    while i < n:
+        ch = text[i]
+        if ch == "{":
+            close = text.find("}", i + 1)
+            nested = text.find("{", i + 1)
+            if close == -1 or (nested != -1 and nested < close):
+                errors.append("unclosed-brace (no closing } for block opening near %r)" % text[i:i + 30])
+                break
+            i = close + 1
+        elif ch == "}":
+            errors.append("stray-brace (} with no opening { near %r)" % text[max(0, i - 30):i])
+            i += 1
+        else:
+            i += 1
+    return errors
+
+
 def quote_stream(text):
     """Normalized stream for quote checks: recorded {ins}/{del} quote
     marks applied, blocks stripped, avagrahas removed, printer '' folded
@@ -171,6 +194,7 @@ def lint_paragraph(idx, start_line, text, first_body=False, last=False, after_ed
         err = check_block(m.group(1), phase)
         if err:
             errors.append(err)
+    errors.extend(check_braces(text))
     if re.search(r"\{(?:sug-)?ins:[^{}]*\}\{(?:sug-)?del:", text):
         errors.append("del-after-ins (span first: {del}/{sug-del} before {ins}/{sug-ins})")
     if "{pc}" in text and not ((first_body or after_edge) and text.startswith("{pc}")):
