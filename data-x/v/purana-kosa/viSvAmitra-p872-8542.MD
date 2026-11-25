@@ -50,26 +50,9 @@ them to the King saying that they were his son and
 daughter. Then the Brahmin who was delighted by the
 promise, showed the King the way to the palace.
 [Page874-b+ 65]
-After making all arrangements for the marriage, Viśvā-
-mitra approached King Hariścandra. The King asked
-him what amount he required. “Give me your kingdom
-with all the elephants, horses, chariots, jewels and
-wealth in it”, said Viśvāmitra. The King who had
-been led to this deception by Viśvāmitra, having no go,
-agreed. Thus Viśvāmitra obtained the kingdom and
-everything that Hariścandra possessed. It is conven-
-tional that whenever a gift is given to Brahmins, a
-dakṣiṇā (monetary gift) also should be given along
-with it. Otherwise the gift will be futile. The King
-asked the Brahmin what he wanted as dakṣiṇā. He
-demanded two and a half Bhāras of gold as dakṣiṇā.
-The King agreed to give that also. But where to get
-this amount from, since he had lost his kingdom and
-everything? Having sunk deep in misery due to the
-deceit of Viśvāmitra, the King sat on the soil, cursing
-his fate. Seeing this, the queen ran to him and cried.
-While he was telling his wife every thing, Viśvāmitra
-came there and said:
+
+विवाहार्थं सर्वाः व्यवस्थाः कृत्वा विश्वामित्रः राजानं हरिश्चन्द्रम् उपगतः। भवान् कियद् धनम् अपेक्षते इति राज्ञा सः पृष्टः। “तव राज्यं तस्मिन् विद्यमानैः सर्वैः गजैः अश्वैः रथैः रत्नैः धनैः च सहितं मह्यं देहि” इति विश्वामित्रेण उक्तम्। विश्वामित्रेण एवम् वञ्चितेन निरुपायेन राज्ञा तद् अङ्गीकृतम्। एवं विश्वामित्रेण राज्यं हरिश्चन्द्रस्य सर्वस्वं च लब्धे। ब्राह्मणेभ्यः दाने दक्षिणा अपि दातव्या इति सम्प्रदायः अस्ति। अन्यथा दानं निष्फलं भविष्यति। दक्षिणारूपेण भवान् किम् इच्छति इति राज्ञा ब्राह्मणः पृष्टः। तेन दक्षिणारूपेण सुवर्णस्य सार्धौ द्वौ भारौ याचितौ। राज्ञा तस्यापि दानम् अङ्गीकृतम्। किन्तु इदं धनं कुतः लभ्यम्, यतः तस्य राज्यं सर्वस्वं च नष्टे? विश्वामित्रस्य वञ्चनेन दुःखे गाढं निमग्नः राजा स्वदैवं निन्दन् भूमौ उपविष्टः। एतत् दृष्ट्वा राज्ञ्या तस्य समीपं धावित्वा रोदनम् कृतम्। तेन स्वपत्न्यै सर्वस्मिन् कथिते विश्वामित्रेण तत्र आगम्य उक्तम् -
+
 <div n="NI"/>Viśvāmitra:—“Hariscandra! According to the gift
 hand over your country and everything instantly. I
 must have the dakṣiṇā of two and a half Bhāras of gold
