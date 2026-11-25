@@ -32,26 +32,8 @@
 
 विश्वामित्रः हरिश्चन्द्रस्य विरोधे शीघ्रम् उपायान् कर्तुम् प्रवृत्तः। तेन घोरः असुरः वराह-रूपीकृतः, सः च हरिश्चन्द्रस्य उद्यानम् प्रेषितः। वराहेण उद्यानम् नाशितम्। वराहम् अपसारयितुम् रक्षकैः कृताः सर्वे प्रयत्नाः विफलताम् गताः। तैः राजा विज्ञापितः। राजा अश्वम् आरुह्य शस्त्रैः सह उद्यानम् प्रति प्रस्थितः। राज्ञः बाणान् अनादृत्य, वराहः पलायितः। राजा तम् अनुधावितुम् प्रवृत्तः। वराहः समीपे लक्षितः। ततः सः दूरे अभूत्, ततः राज्ञः पुरः, सहसा च सः तस्य पृष्ठतः प्रत्यक्षः अभूत्। ततः सः तत्क्षणे अन्तर्हितः। अनेन प्रकारेण वराहः राजानम् परितः क्रीडितः। अल्प-कालात् अनन्तरम् राजा स्वकीयायाः सेनायाः वियुक्तः, एकाकी एव घने वने अवरुद्धः च। तेन कः अपि निर्गम-मार्गः न प्राप्तः। सः वने स्वकीयात् मार्गात् भ्रष्टः। एवम् शनैः चलता तेन आत्मनः पुरः शुद्धस्य जलस्य प्रवाहः दृष्टः। उभाभ्याम् राज्ञा अश्वेन च प्रवाहात् जलम् पीतम्। यदा सः गृह-प्रत्यागमन-मार्गम् अजानन् एवम् स्थितः, तदा विश्वामित्रः वृद्धस्य ब्राह्मणस्य वेषेण तस्य समीपम् गतः।
 
-<div n="NI"/>The King honoured the old man, and told him that he
-was Hariścandra, the King of Ayodhyā, and that by
-chasing a hog which destroyed his garden, he had
-reached the forest. He continued telling the old Brahmin
-who had helped him. “You might have heard that
-Hariścandra, the King of Ayodhyā, had performed the
-sacrifice Rājasūya. I am that same King. It is my vow
-to give anybody what he asks for. If you want money
-or anything for sacrifice or for any other purpose, just
-come to Ayodhyā. I will give you whatever you want.”
-The old man was pleased. He told the King that the
-jungle-stream flowed through a holy place and that
-it would be better to offer the gift after taking a bath
-in the river. The King purified himself by bathing in
-the river and then said. “Sir, I am ready to offer gifts.
-State your needs. It is my vow to give what is requested.
-At the time of the Rājasūya I acted so towards all of
-you and took a vow that I would do so in future also. I
-am glad because I have met you on the bank of this
-holy stream. So tell me quickly what you want.”
+राज्ञा वृद्धम् सत्कृत्य, “अहम् अयोध्यायाः राजा हरिश्चन्द्रः अस्मि, मम उद्यानम् नाशितवन्तम् वराहम् अनुधावन् वनम् प्राप्तः” इति तस्मै कथितम्। तेन तस्य उपकृतवते वृद्धाय ब्राह्मणाय पुनः कथितम्। हरिश्चन्द्रः - “अयोध्यायाः राज्ञा हरिश्चन्द्रेण राजसूययज्ञः कृतः इति भवता श्रुतम् स्यात्। सः एव राजा अहम् अस्मि। याचकस्य याचनपूरणम् मम व्रतम् अस्ति। यदि यज्ञाय वा अन्यस्मै वा प्रयोजनाय धनादिकम् भवान् इच्छति, तर्हि अयोध्याम् आगच्छतु। भवते इच्छानुसारेण दास्यामि।” वृद्धः तुष्टः। “वननदी पुण्यक्षेत्रे वहति, नद्याम् च स्नात्वा दानम् वरम् स्यात्” इति तेन राज्ञे कथितम्। राज्ञा नद्याम् स्नात्वा आत्मानम् पावयित्वा ततः उक्तम्। हरिश्चन्द्रः - “भगवन्, दानानाम् दानाय सज्जः अस्मि। भवतः अपेक्षितानि वदतु। याचितस्य दानम् मम व्रतम्। राजसूयकाले सर्वान् भवतः प्रति मया तथा आचरितम्। भविष्यति अपि तथा करिष्यामि इति व्रतम् च गृहीतम्। अस्याः पुण्यनद्याः तीरे भवता सह समागतः इति अहम् हर्षितः अस्मि। अतः भवान् स्वेच्छाम् मह्यम् शीघ्रम् वदतु।”
+
 <div n="NI"/>Brahmin:—“Oh King, I have heard about your fame.
 Moreover there is nobody in the world equal to Hariś-
 candra, born of the Solar dynasty, the son of Triśaṅku
