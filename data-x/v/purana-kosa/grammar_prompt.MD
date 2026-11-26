@@ -21,3 +21,4 @@
 15. When multiple adjectives or epithets describe the same person or referent, omit च (ca) between them (e.g., आध्यात्मिकः दार्शनिकः आचार्यः, not आध्यात्मिकः दार्शनिकः च आचार्यः).
 16. When giving alternative names or titles (e.g., "also called X and Y"), use वा ... वा नाम (vA ... vA nAma) instead of च ... इति अपि (ca ... iti api).
 17. Avoid literal English idioms / anglicisms (e.g., do not calque "saw the light of day" as दिनस्य प्रकाशः दृष्टः); render the intended meaning using idiomatic Sanskrit (e.g., जन्म लब्धम् / उत्पन्नः / जातः).
+18. try to make the sentences as short as possible without losing meaning by using sanskrit grammatical tricks.
