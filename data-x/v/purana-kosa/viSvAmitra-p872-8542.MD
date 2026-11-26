@@ -43,25 +43,7 @@
 
 मुनये सर्वं दत्त्वा राजा केवलं परिहितेन वस्त्रेण सह देशात् निर्गतः। तस्य पत्नी बालकः च तम् अनुगतौ। मुनिः अपि दक्षिणादानाय तं बाधमानः राजानम् अनुगतः। राज्ञा तस्मै कथितम् एतत् ऋणं परिशोध्य एव अहं भोजनं भोक्ष्ये, मासाभ्यन्तरे च धनं दास्यामि इति। विश्वामित्रेण अनिच्छया एतत् अङ्गीकृतम्।
 
-<div n="NI"/>With his wife Candramatī and his young son, Hariś-
-candra reached Kāśī. After a month Viśvāmitra came
-to Kāśī for the amount of dakṣiṇā. Finding no go,
-Candramatī said to her husband. “My Lord! sell me to
-some one and clear off this debt.” The King with tears
-agreed to this proposal. Because of their woe and
-misery, both fell on the ground and fainted. The child
-sat near them hungry and crying. Viśvāmitra stood near
-them compelling them to pay the amount. When Hariś-
-candra came to himself, he sold his beloved wife to a
-Brahmin in the village close by. The Brahmin who
-bought Candramatī was Viśvāmitra. Hariścandra was
-not aware of this. After counting out a crore of gold
-pieces in a cloth and placing it on the ground Viśvā-
-mitra caught hold of Candramatī by her hair and
-dragged her away. He bought the crying child also
-paying its price. The Brahmin led the mother and the
-child, beating and dragging them along, like animals.
-They disappeared from the sight of the King.
+स्वपत्न्या चन्द्रमत्या बालपुत्रेण च सह हरिश्चन्द्रः काशीं प्राप्तः। एकस्मात् मासात् अनन्तरं विश्वामित्रः दक्षिणाधनार्थं काशीम् आगतः। अनन्यगतिकया चन्द्रमत्या स्वपतिः उक्तः। चन्द्रमती - “हे नाथ! मां कस्मैचित् विक्रीय एतत् ऋणं परिशोधय।” बाष्पसहितेन राज्ञा एषः प्रस्तावः अङ्गीकृतः। तयोः शोकदुःखाभ्याम् उभौ भूमौ पतितौ मूर्च्छितौ। क्षुधितः रुदन् बालकः तयोः समीपे उपविष्टः। विश्वामित्रः धनदानाय तौ बाधमानः तयोः समीपे स्थितः। हरिश्चन्द्रे लब्धसञ्ज्ञे जाते तेन स्वकीया प्रिया पत्नी समीपस्थग्रामस्य एकस्मै ब्राह्मणाय विक्रीता। येन ब्राह्मणेन चन्द्रमती क्रीता, सः विश्वामित्रः अभूत्। हरिश्चन्द्रेण एतत् न ज्ञातम्। कोटिं सुवर्णमुद्राः गणयित्वा वस्त्रे स्थापयित्वा तत् वस्त्रं च भूमौ निधाय विश्वामित्रेण चन्द्रमती केशेषु गृहीत्वा आकृष्टा। तेन बालकस्य मूल्यं दत्त्वा रुदन् बालकः अपि क्रीतः। ब्राह्मणेन माता बालकः च पशू इव ताडयित्वा आकृष्य नीतौ। तौ राज्ञः दृष्टिपथात् अदृश्यौ जातौ।
 
 <div n="NI"/>Viśvāmitra again came before Hariścandra and asked
 for the money. Hariścandra gave Viśvāmitra, all the
@@ -70,12 +52,12 @@ said that the money given, was not an adequate amount
 as dakṣiṇā when the importance of the great sacrifice
 Rājasūya was considered and that if he was to get the
 full benefit of the sacrifice he had to satisfy him by
-[Page875-a+ 65]
 giving him the requisite amount. The King accepted
 everything the hermit said without any objection.
 Viśvāmitra compelled him for payment. The King
 requested for time. Viśvāmitra allowed time till sunset
 that day.
+
 <div n="NI"/>As soon as Viśvāmitra had gone Hariścandra walked
 on with bent head, calling out. “Does anybody want
 me? Will anybody buy me for price?” Instantly
