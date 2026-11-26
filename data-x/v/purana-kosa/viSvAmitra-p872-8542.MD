@@ -36,24 +36,13 @@
 ब्राह्मणः—“हे राजन्, मया तव कीर्तिः श्रुता। अपि च लोके औदार्ये सूर्यवंशजातस्य त्रिशङ्कुपुत्रस्य हरिश्चन्द्रस्य तुल्यः कः अपि न अस्ति। मुनेः वसिष्ठस्य एतादृशं मतम् अस्ति। हे राजन्, एतादृशस्य औदार्ययुक्तस्य तव विषये अधिकं ज्ञातव्यं किमपि न वर्तते। मम एका एव इच्छा वर्तते। मम पुत्रस्य विवाहः अनुष्ठीयते। मम पार्श्वे विवाहाय पर्याप्तं धनं न वर्तते। अहं केवलं तदर्थं साहाय्यम् इच्छामि।” राज्ञा सः अतीव सरलः अनुरोधः चिन्तितः, आवश्यकं धनं दातुं च प्रतिज्ञातम्। विश्वामित्रेण गन्धर्वोचितया मायया एकः युवकः एका युवतिः च निर्माय स्वपुत्रपुत्र्यौ इव राजानं प्रदर्शितौ। ततः प्रतिज्ञया प्रसन्नेन ब्राह्मणेन राजानं राजप्रासादस्य मार्गः दर्शितः।
 
 विवाहार्थं सर्वाः व्यवस्थाः कृत्वा विश्वामित्रः राजानं हरिश्चन्द्रम् उपगतः। भवान् कियद् धनम् अपेक्षते इति राज्ञा सः पृष्टः। “तव राज्यं तस्मिन् विद्यमानैः सर्वैः गजैः अश्वैः रथैः रत्नैः धनैः च सहितं मह्यं देहि” इति विश्वामित्रेण उक्तम्। विश्वामित्रेण एवम् वञ्चितेन निरुपायेन राज्ञा तद् अङ्गीकृतम्। एवं विश्वामित्रेण राज्यं हरिश्चन्द्रस्य सर्वस्वं च लब्धे। ब्राह्मणेभ्यः दाने दक्षिणा अपि दातव्या इति सम्प्रदायः अस्ति। अन्यथा दानं निष्फलं भविष्यति। दक्षिणारूपेण भवान् किम् इच्छति इति राज्ञा ब्राह्मणः पृष्टः। तेन दक्षिणारूपेण सुवर्णस्य सार्धौ द्वौ भारौ याचितौ। राज्ञा तस्यापि दानम् अङ्गीकृतम्। किन्तु इदं धनं कुतः लभ्यम्, यतः तस्य राज्यं सर्वस्वं च नष्टे? विश्वामित्रस्य वञ्चनेन दुःखे गाढं निमग्नः राजा स्वदैवं निन्दन् भूमौ उपविष्टः। एतत् दृष्ट्वा राज्ञ्या तस्य समीपं धावित्वा रोदनम् कृतम्। तेन स्वपत्न्यै सर्वस्मिन् कथिते विश्वामित्रेण तत्र आगम्य उक्तम् -
-व
-िश्वामित्रः—“हरिश्चन्द्र! दानानुसारेण तव राज्यं सर्वस्वं च तत्क्षणे समर्पय। मया सार्धभारद्वयसुवर्णस्य दक्षिणा अपि अधुना एव प्राप्तव्या।”
 
-<div n="NI"/>Hariścandra:—“Sir! According to my promise receive
-everything now. We are leaving the country instantly.
-But since I have given you everything that I had, how
-can I give you dakṣiṇā? Everything I had, has become
-yours. The amount for dakṣiṇā has yet to be procured.
-So receive the gift now. The dakṣiṇā shall be given as
-early as possible.”
-<div n="NI"/>After giving everything to the hermit, the King left the
-country with only the cloth he had been wearing. His
-wife and child followed him. The hermit also follow-
-ed the King compelling him to give him the dakṣiṇā.
-The King told him that only after paying this debt
-would he eat any food, and that he would pay the
-amount within a month. Viśvāmitra, unwillingly agreed
-to this.
+विश्वामित्रः—“हरिश्चन्द्र! दानानुसारेण तव राज्यं सर्वस्वं च तत्क्षणे समर्पय। मया सार्धभारद्वयसुवर्णस्य दक्षिणा अपि अधुना एव प्राप्तव्या।”
+
+हरिश्चन्द्रः—“भगवन्! मम प्रतिज्ञानानुसारेण अधुना सर्वं स्वीकुरु। वयं सद्यः देशं परित्यक्ष्यामः। किन्तु यतो हि मया तुभ्यं मदीयं सर्वं दत्तम्, ततः कथम् अहं तुभ्यं दक्षिणां दातुं शक्नोमि? मदीयं सर्वं त्वदीयं जातम्। दक्षिणार्थं धनम् अद्यापि सम्पादनीयं वर्तते। अतः अधुना दानं स्वीकुरु। दक्षिणा शीघ्रम् एव दास्यते।”
+
+मुनये सर्वं दत्त्वा राजा केवलं परिहितेन वस्त्रेण सह देशात् निर्गतः। तस्य पत्नी बालकः च तम् अनुगतौ। मुनिः अपि दक्षिणादानाय तं बाधमानः राजानम् अनुगतः। राज्ञा तस्मै कथितम् एतत् ऋणं परिशोध्य एव अहं भोजनं भोक्ष्ये, मासाभ्यन्तरे च धनं दास्यामि इति। विश्वामित्रेण अनिच्छया एतत् अङ्गीकृतम्।
+
 <div n="NI"/>With his wife Candramatī and his young son, Hariś-
 candra reached Kāśī. After a month Viśvāmitra came
 to Kāśī for the amount of dakṣiṇā. Finding no go,
@@ -73,6 +62,7 @@ dragged her away. He bought the crying child also
 paying its price. The Brahmin led the mother and the
 child, beating and dragging them along, like animals.
 They disappeared from the sight of the King.
+
 <div n="NI"/>Viśvāmitra again came before Hariścandra and asked
 for the money. Hariścandra gave Viśvāmitra, all the
 money he got. The hermit was not satisfied. Viśvāmitra
