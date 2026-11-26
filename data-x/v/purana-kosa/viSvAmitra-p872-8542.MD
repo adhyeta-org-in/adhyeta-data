@@ -45,18 +45,7 @@
 
 स्वपत्न्या चन्द्रमत्या बालपुत्रेण च सह हरिश्चन्द्रः काशीं प्राप्तः। एकस्मात् मासात् अनन्तरं विश्वामित्रः दक्षिणाधनार्थं काशीम् आगतः। अनन्यगतिकया चन्द्रमत्या स्वपतिः उक्तः। चन्द्रमती - “हे नाथ! मां कस्मैचित् विक्रीय एतत् ऋणं परिशोधय।” बाष्पसहितेन राज्ञा एषः प्रस्तावः अङ्गीकृतः। तयोः शोकदुःखाभ्याम् उभौ भूमौ पतितौ मूर्च्छितौ। क्षुधितः रुदन् बालकः तयोः समीपे उपविष्टः। विश्वामित्रः धनदानाय तौ बाधमानः तयोः समीपे स्थितः। हरिश्चन्द्रे लब्धसञ्ज्ञे जाते तेन स्वकीया प्रिया पत्नी समीपस्थग्रामस्य एकस्मै ब्राह्मणाय विक्रीता। येन ब्राह्मणेन चन्द्रमती क्रीता, सः विश्वामित्रः अभूत्। हरिश्चन्द्रेण एतत् न ज्ञातम्। कोटिं सुवर्णमुद्राः गणयित्वा वस्त्रे स्थापयित्वा तत् वस्त्रं च भूमौ निधाय विश्वामित्रेण चन्द्रमती केशेषु गृहीत्वा आकृष्टा। तेन बालकस्य मूल्यं दत्त्वा रुदन् बालकः अपि क्रीतः। ब्राह्मणेन माता बालकः च पशू इव ताडयित्वा आकृष्य नीतौ। तौ राज्ञः दृष्टिपथात् अदृश्यौ जातौ।
 
-<div n="NI"/>Viśvāmitra again came before Hariścandra and asked
-for the money. Hariścandra gave Viśvāmitra, all the
-money he got. The hermit was not satisfied. Viśvāmitra
-said that the money given, was not an adequate amount
-as dakṣiṇā when the importance of the great sacrifice
-Rājasūya was considered and that if he was to get the
-full benefit of the sacrifice he had to satisfy him by
-giving him the requisite amount. The King accepted
-everything the hermit said without any objection.
-Viśvāmitra compelled him for payment. The King
-requested for time. Viśvāmitra allowed time till sunset
-that day.
+विश्वामित्रेण पुनः हरिश्चन्द्रस्य समक्षम् आगत्य धनं याचितम्। हरिश्चन्द्रेण विश्वामित्राय लब्धं सर्वं धनं दत्तम्। मुनिः न तुष्टः। विश्वामित्रेण उक्तम्— राजसूयमहायज्ञमहत्त्वानुसारेण दत्तं धनं दक्षिणार्थं पर्याप्तं न वर्तते। अपि च यदि त्वं यज्ञस्य पूर्णं फलं प्राप्तुम् इच्छसि, तर्हि त्वया आवश्यकं धनं दत्त्वा अहं सन्तोषणीयः इति। राज्ञा कमपि आक्षेपं विना मुनिना उक्तं सर्वं स्वीकृतम्। विश्वामित्रेण सः धनदानाय बाधितः। राज्ञा समयः प्रार्थितः। विश्वामित्रेण तस्मिन् दिने सूर्यास्तपर्यन्तं समयः दत्तः।
 
 <div n="NI"/>As soon as Viśvāmitra had gone Hariścandra walked
 on with bent head, calling out. “Does anybody want
@@ -71,6 +60,7 @@ Prayāga and severed his connection. Viśvāmitra went
 on his way. The outcaste King took Hariścandra to
 the funeral ground. Day and night Hariścandra had to
 guard the entrance of the funeral ground.
+
 <div n="NI"/>At this juncture Hariścandra's son died of snake bite,
 while he was playing with other children on the bank
 of the Ganges. His mother Candramatī fainted and
