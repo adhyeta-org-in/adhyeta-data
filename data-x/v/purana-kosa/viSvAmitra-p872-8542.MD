@@ -50,17 +50,7 @@
 
 अत्रान्तरे गङ्गातीरे अन्यैः बालैः सह क्रीडन् हरिश्चन्द्रपुत्रः सर्पदंशेन मृतः। तन्माता चन्द्रमती तच्छ्रवणमात्रेण मूर्च्छित्वा निपतिता। लब्धसञ्ज्ञा एव सा स्वपुत्रमरणे चिरं विलपिता। ततः तया स्वपुत्रशवं गत्वा द्रष्टुम् अनुमतये स्वामी प्रार्थितः। तस्यै तु अनुमतिः न दत्ता। सततं रुदत्या तया मुहुः प्रार्थना कृता। ततः तत्स्वामिना ब्राह्मणेन क्रुद्ध्वा उक्तम्। “रे दासि! तव पुत्रः मृतः चेत् मृतः अस्तु। किम् अनेन ते कापि क्षतिः? ममैव धनं नष्टम्। त्वं गत्वा स्वकार्यं कुरु। नो चेत् अनया कशया त्वां सम्यक् ताडयिष्यामि। तत् स्मर। त्वम् अस्याः कशायाः तीक्ष्णपीडां जानासि। अलं रोदनविलापाभ्याम्।”
 
-<div n="NI"/>Candramatī persisted in her request to allow her to go
-and see the dead body of her son. Not only did he
-refuse to allow her to see the dead body of her son, but
-also beat her. With tears she turned to her duties. It
-was night. The Brahmin took his meals and lay down
-to sleep. Candramatī was sitting at his feet massaging
-his legs. When it was nearly midnight that stone-hearted
-old Brahmin said. “Now you may go. Complete the
-funeral and return before dawn. Your usual work in the
-morning should not be left undone. If so, you know
-the consequences.”
+चन्द्रमत्या स्वपुत्रशवं गत्वा द्रष्टुम् अनुमतिः सनिर्बन्धं प्रार्थिता। तेन न केवलं तत्पुत्रशवदर्शनानुमतिः प्रत्याख्याता, अपि तु सा ताडिता अपि। सा साश्रु स्वकार्येषु प्रवृत्ता। रात्रिः अभूत्। ब्राह्मणः भुक्त्वा स्वप्तुं शयितः। चन्द्रमती तत्पादमूले तज्जङ्घे संवाहयन्ती उपविष्टा। आसन्ने अर्धरात्रे तेन पाषाणहृदयेन वृद्धेन ब्राह्मणेन उक्तम्। “अधुना त्वं गन्तुं शक्नोषि। अन्त्यक्रियां समाप्य प्रभातात् प्राक् प्रत्यागच्छ। तव नित्यं प्रातःकार्यम् अकृतं न स्यात्। तथा चेत् त्वं परिणामं जानासि।”
 
 <div n="NI"/>Hearing these words, Candramatī ran to the place
 where the dead body of her son lay. The son lay on the
@@ -79,6 +69,7 @@ sword asked him again and again to cut her into pieces.
 Candramatī and Hariścandra did not recognize each
 other. At last, finding it difficult to disobey his master,
 Hariścandra raised the sword to cut her.
+
 <div n="NI"/>Then Candramatī shouted. “You outcaste. My son is
 lying dead on the bank of the Ganges near this town.
 Let me bring his body and cremate it. Allow me this
