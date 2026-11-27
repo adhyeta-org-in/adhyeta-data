@@ -46,20 +46,7 @@
 स्वपत्न्या चन्द्रमत्या बालपुत्रेण च सह हरिश्चन्द्रः काशीं प्राप्तः। एकस्मात् मासात् अनन्तरं विश्वामित्रः दक्षिणाधनार्थं काशीम् आगतः। अनन्यगतिकया चन्द्रमत्या स्वपतिः उक्तः। चन्द्रमती - “हे नाथ! मां कस्मैचित् विक्रीय एतत् ऋणं परिशोधय।” बाष्पसहितेन राज्ञा एषः प्रस्तावः अङ्गीकृतः। तयोः शोकदुःखाभ्याम् उभौ भूमौ पतितौ मूर्च्छितौ। क्षुधितः रुदन् बालकः तयोः समीपे उपविष्टः। विश्वामित्रः धनदानाय तौ बाधमानः तयोः समीपे स्थितः। हरिश्चन्द्रे लब्धसञ्ज्ञे जाते तेन स्वकीया प्रिया पत्नी समीपस्थग्रामस्य एकस्मै ब्राह्मणाय विक्रीता। येन ब्राह्मणेन चन्द्रमती क्रीता, सः विश्वामित्रः अभूत्। हरिश्चन्द्रेण एतत् न ज्ञातम्। कोटिं सुवर्णमुद्राः गणयित्वा वस्त्रे स्थापयित्वा तत् वस्त्रं च भूमौ निधाय विश्वामित्रेण चन्द्रमती केशेषु गृहीत्वा आकृष्टा। तेन बालकस्य मूल्यं दत्त्वा रुदन् बालकः अपि क्रीतः। ब्राह्मणेन माता बालकः च पशू इव ताडयित्वा आकृष्य नीतौ। तौ राज्ञः दृष्टिपथात् अदृश्यौ जातौ।
 
 विश्वामित्रेण पुनः हरिश्चन्द्रस्य समक्षम् आगत्य धनं याचितम्। हरिश्चन्द्रेण विश्वामित्राय लब्धं सर्वं धनं दत्तम्। मुनिः न तुष्टः। विश्वामित्रेण उक्तम्— राजसूयमहायज्ञमहत्त्वानुसारेण दत्तं धनं दक्षिणार्थं पर्याप्तं न वर्तते। अपि च यदि त्वं यज्ञस्य पूर्णं फलं प्राप्तुम् इच्छसि, तर्हि त्वया आवश्यकं धनं दत्त्वा अहं सन्तोषणीयः इति। राज्ञा कमपि आक्षेपं विना मुनिना उक्तं सर्वं स्वीकृतम्। विश्वामित्रेण सः धनदानाय बाधितः। राज्ञा समयः प्रार्थितः। विश्वामित्रेण तस्मिन् दिने सूर्यास्तपर्यन्तं समयः दत्तः।
-
-<div n="NI"/>As soon as Viśvāmitra had gone Hariścandra walked
-on with bent head, calling out. “Does anybody want
-me? Will anybody buy me for price?” Instantly
-Yamadharma came there as an outcaste and bought
-Hariścandra. The name of the outcaste was Pravīra.
-He bought Hariścandra to guard the funeral ground
-and to collect tax on dead bodies. Viśvāmitra quickly
-ran to the place. The outcaste gave Viśvāmitra ten
-yojanas of land which yielded jewels, in the region of
-Prayāga and severed his connection. Viśvāmitra went
-on his way. The outcaste King took Hariścandra to
-the funeral ground. Day and night Hariścandra had to
-guard the entrance of the funeral ground.
+विश्वामित्रे गते एव हरिश्चन्द्रः अवनतमस्तकः उच्चैः आह्वयन् अग्रे चलितः। हरिश्चन्द्रः - “किं कश्चित् माम् इच्छति? किं कश्चित् मूल्येन मां क्रेष्यति?” तत्क्षणं यमधर्मेण चाण्डालरूपेण तत्र आगत्य हरिश्चन्द्रः क्रीतः। तस्य चाण्डालस्य नाम प्रवीरः अभूत्। तेन श्मशानं रक्षितुं मृतशरीराणां करं सङ्ग्रहीतुं च हरिश्चन्द्रः क्रीतः। विश्वामित्रः शीघ्रं तत् स्थानं धावितः। चाण्डालेन विश्वामित्राय प्रयागप्रदेशे रत्नदायिनी दशयोजनपरिमिता भूमिः दत्ता, तेन च स्वसम्बन्धः विच्छिन्नः। विश्वामित्रः स्वमार्गेण गतः। चाण्डालराजेन हरिश्चन्द्रः श्मशानं नीतः। अहर्निशं हरिश्चन्द्रेण श्मशानस्य द्वारं रक्षितव्यम् अभूत्।
 
 <div n="NI"/>At this juncture Hariścandra's son died of snake bite,
 while he was playing with other children on the bank
@@ -76,6 +63,7 @@ that is lost. You go and do your work. If not I will
 operate this whip well on you. Remember that. You
 know the biting pain of this whip. Stop wailing and
 lamenting.”
+
 <div n="NI"/>Candramatī persisted in her request to allow her to go
 and see the dead body of her son. Not only did he
 refuse to allow her to see the dead body of her son, but
