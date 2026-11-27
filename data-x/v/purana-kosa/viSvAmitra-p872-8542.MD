@@ -48,21 +48,7 @@
 विश्वामित्रेण पुनः हरिश्चन्द्रस्य समक्षम् आगत्य धनं याचितम्। हरिश्चन्द्रेण विश्वामित्राय लब्धं सर्वं धनं दत्तम्। मुनिः न तुष्टः। विश्वामित्रेण उक्तम्— राजसूयमहायज्ञमहत्त्वानुसारेण दत्तं धनं दक्षिणार्थं पर्याप्तं न वर्तते। अपि च यदि त्वं यज्ञस्य पूर्णं फलं प्राप्तुम् इच्छसि, तर्हि त्वया आवश्यकं धनं दत्त्वा अहं सन्तोषणीयः इति। राज्ञा कमपि आक्षेपं विना मुनिना उक्तं सर्वं स्वीकृतम्। विश्वामित्रेण सः धनदानाय बाधितः। राज्ञा समयः प्रार्थितः। विश्वामित्रेण तस्मिन् दिने सूर्यास्तपर्यन्तं समयः दत्तः।
 विश्वामित्रे गते एव हरिश्चन्द्रः अवनतमस्तकः उच्चैः आह्वयन् अग्रे चलितः। हरिश्चन्द्रः - “किं कश्चित् माम् इच्छति? किं कश्चित् मूल्येन मां क्रेष्यति?” तत्क्षणं यमधर्मेण चाण्डालरूपेण तत्र आगत्य हरिश्चन्द्रः क्रीतः। तस्य चाण्डालस्य नाम प्रवीरः अभूत्। तेन श्मशानं रक्षितुं मृतशरीराणां करं सङ्ग्रहीतुं च हरिश्चन्द्रः क्रीतः। विश्वामित्रः शीघ्रं तत् स्थानं धावितः। चाण्डालेन विश्वामित्राय प्रयागप्रदेशे रत्नदायिनी दशयोजनपरिमिता भूमिः दत्ता, तेन च स्वसम्बन्धः विच्छिन्नः। विश्वामित्रः स्वमार्गेण गतः। चाण्डालराजेन हरिश्चन्द्रः श्मशानं नीतः। अहर्निशं हरिश्चन्द्रेण श्मशानस्य द्वारं रक्षितव्यम् अभूत्।
 
-<div n="NI"/>At this juncture Hariścandra's son died of snake bite,
-while he was playing with other children on the bank
-of the Ganges. His mother Candramatī fainted and
-fell down, the moment she heard about it. As soon as
-she recovered, she lamented over the death of her son
-for a long time. Then she requested her master for
-permission to go and see the dead body of her son. But
-she was not given permission. She repeatedly pleaded
-crying all the while. Then the Brahmin, her master, got
-angry and said. “You slave! If your son it dead, let
-him be dead. Is it any loss to you? It is my money
-that is lost. You go and do your work. If not I will
-operate this whip well on you. Remember that. You
-know the biting pain of this whip. Stop wailing and
-lamenting.”
+अत्रान्तरे गङ्गातीरे अन्यैः बालैः सह क्रीडन् हरिश्चन्द्रपुत्रः सर्पदंशेन मृतः। तन्माता चन्द्रमती तच्छ्रवणमात्रेण मूर्च्छित्वा निपतिता। लब्धसञ्ज्ञा एव सा स्वपुत्रमरणे चिरं विलपिता। ततः तया स्वपुत्रशवं गत्वा द्रष्टुम् अनुमतये स्वामी प्रार्थितः। तस्यै तु अनुमतिः न दत्ता। सततं रुदत्या तया मुहुः प्रार्थना कृता। ततः तत्स्वामिना ब्राह्मणेन क्रुद्ध्वा उक्तम्। “रे दासि! तव पुत्रः मृतः चेत् मृतः अस्तु। किम् अनेन ते कापि क्षतिः? ममैव धनं नष्टम्। त्वं गत्वा स्वकार्यं कुरु। नो चेत् अनया कशया त्वां सम्यक् ताडयिष्यामि। तत् स्मर। त्वम् अस्याः कशायाः तीक्ष्णपीडां जानासि। अलं रोदनविलापाभ्याम्।”
 
 <div n="NI"/>Candramatī persisted in her request to allow her to go
 and see the dead body of her son. Not only did he
@@ -75,6 +61,7 @@ old Brahmin said. “Now you may go. Complete the
 funeral and return before dawn. Your usual work in the
 morning should not be left undone. If so, you know
 the consequences.”
+
 <div n="NI"/>Hearing these words, Candramatī ran to the place
 where the dead body of her son lay. The son lay on the
 grass dead and stiff, with the face and body turned blue
